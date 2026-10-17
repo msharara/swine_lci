@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/regions.schema.json",
+  "title": "regions",
+  "description": "State registry and named regions as groups of states. Region definitions are still to be set.",
+  "type": "object",
+  "required": [
+    "region_id",
+    "name",
+    "level"
+  ],
+  "properties": {
+    "region_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "state",
+        "multi_state_region",
+        "national",
+        "site"
+      ]
+    },
+    "state_fips": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "member states (2-digit FIPS)"
+    },
+    "centroid": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

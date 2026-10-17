@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/sites.schema.json",
+  "title": "sites",
+  "description": "A physical place with buildings that can house animal stages. No animals or manure chain here.",
+  "type": "object",
+  "required": [
+    "site_id",
+    "region_id",
+    "housing_type",
+    "stages_supported"
+  ],
+  "properties": {
+    "site_id": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string",
+      "description": "id in regions"
+    },
+    "housing_type": {
+      "type": "string",
+      "enum": [
+        "confinement_curtain_sided",
+        "confinement_tunnel_ventilated",
+        "hoop_barn",
+        "outdoor"
+      ]
+    },
+    "stages_supported": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gestation",
+          "farrowing_lactation",
+          "gilt_development",
+          "boar",
+          "nursery",
+          "finishing"
+        ]
+      }
+    },
+    "capacity": {
+      "type": "object",
+      "description": "head spaces",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in units"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "id in sources"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "id in quality"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "infrastructure_process_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "buildings and equipment (unit_processes)"
+      }
+    },
+    "energy_process_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "heating, ventilation, lighting (unit_processes)"
+      }
+    },
+    "downtime_days_per_turn": {
+      "type": "object",
+      "description": "Empty days between groups (washout, drying, repairs). Engine: turns/yr = 365 / (stage days + downtime); pigs/yr = capacity x turns x (1 - mortality); yearly site energy and infrastructure divided by pigs/yr.",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in units"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "id in sources"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "id in quality"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    }
+  }
+}

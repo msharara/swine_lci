@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/mortality_systems.schema.json",
+  "title": "mortality_systems",
+  "description": "Dead-animal custody at a site: equipment sized to the site's mortality, its capital and operating needs, and its outputs. Carcass mass per shipped pig comes from the herd (deaths x weight at death), so it is not entered here.",
+  "type": "object",
+  "required": [
+    "mortality_system_id",
+    "type",
+    "design_capacity",
+    "service_life_years",
+    "resources"
+  ],
+  "properties": {
+    "mortality_system_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "composting_in_vessel",
+        "composting_aerated_static_bin",
+        "rendering_refrigerated_storage",
+        "incineration_onsite"
+      ]
+    },
+    "fuel": {
+      "type": "string",
+      "enum": [
+        "propane",
+        "natural_gas"
+      ],
+      "description": "incineration only"
+    },
+    "design_capacity": {
+      "type": "object",
+      "description": "sizing: carcass mass handled per day (composting, incineration) or refrigerated storage volume (rendering)",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in units"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "id in sources"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "id in quality"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "service_life_years": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "spreads capital over carcasses handled"
+    },
+    "capital_cost": {
+      "type": "object",
+      "description": "investment, USD; economic field, not summed into the physical inventory",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in units"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "id in sources"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "id in quality"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "operating_cost": {
+      "type": "object",
+      "description": "USD per year; economic field, not summed into the physical inventory",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in units"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "id in sources"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "id in quality"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "infrastructure_process_id": {
+      "type": "string",
+      "description": "materials of the unit itself (unit_processes)"
+    },
+    "resources": {
+      "type": "array",
+      "description": "per kg carcass handled: fuel, electricity, labor, carbon-rich amendment for composting",
+      "items": {
+        "type": "object",
+        "required": [
+          "flow_id",
+          "amount"
+        ],
+        "properties": {
+          "flow_id": {
+            "type": "string",
+            "description": "id in flows"
+          },
+          "amount": {
+            "type": "object",
+            "description": "quantity per kg carcass",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "description": "compost and ash stay on site; refrigerated carcasses leave by transport_link to the renderer",
+      "items": {
+        "type": "object",
+        "required": [
+          "flow_id",
+          "amount",
+          "fate"
+        ],
+        "properties": {
+          "flow_id": {
+            "type": "string",
+            "description": "compost, ash, refrigerated_carcass (flows)"
+          },
+          "amount": {
+            "type": "object",
+            "description": "quantity per kg carcass",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "fate": {
+            "type": "string",
+            "enum": [
+              "used_on_site",
+              "shipped_to_renderer"
+            ]
+          },
+          "transport_link_id": {
+            "type": "string",
+            "description": "required when shipped (transport_links)"
+          }
+        },
+        "if": {
+          "properties": {
+            "fate": {
+              "const": "shipped_to_renderer"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "transport_link_id"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "incineration_onsite"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "fuel"
+        ]
+      }
+    }
+  ]
+}

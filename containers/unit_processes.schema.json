@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/unit_processes.schema.json",
+  "title": "unit_processes",
+  "description": "A process with its exchanges per reference amount (per animal-day, per tonne of crop, etc.).",
+  "type": "object",
+  "required": [
+    "process_id",
+    "name",
+    "region_id",
+    "reference",
+    "exchanges"
+  ],
+  "properties": {
+    "process_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "reference": {
+      "type": "object",
+      "required": [
+        "flow_id",
+        "amount"
+      ],
+      "properties": {
+        "flow_id": {
+          "type": "string",
+          "description": "id in another container"
+        },
+        "amount": {
+          "type": "object",
+          "description": "reference quantity",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in another container"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "source id (sources.schema.json)"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "quality record id (quality.schema.json)"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        }
+      }
+    },
+    "exchanges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flow_id",
+          "direction",
+          "amount"
+        ],
+        "properties": {
+          "flow_id": {
+            "type": "string",
+            "description": "id in another container"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "input",
+              "output"
+            ]
+          },
+          "amount": {
+            "type": "object",
+            "description": "quantity per reference amount",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in another container"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "source id (sources.schema.json)"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "quality record id (quality.schema.json)"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "provider_process_id": {
+            "type": "string",
+            "description": "id in another container"
+          },
+          "formula": {
+            "type": "string",
+            "description": "optional parameter formula, e.g. from the D384.2 engine"
+          },
+          "estimation_method": {
+            "type": "object",
+            "description": "how a modeled flow (e.g. an emission) was estimated",
+            "properties": {
+              "method": {
+                "type": "string",
+                "description": "e.g. IPCC 2019 Vol.4 Ch.10 Eq.10.23; CIGR heat-production equation"
+              },
+              "ipcc_tier": {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2,
+                  3
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "system_layer": {
+      "type": "string",
+      "enum": [
+        "foreground",
+        "direct_supply",
+        "background"
+      ],
+      "description": "foreground = on-farm operations; direct_supply = production of inputs the farm buys directly (feed ingredients, fertilizer, fuel, electricity, semen); background = everything further upstream, from generic datasets. Not the IPCC 'tier', which is recorded per exchange as estimation_method.ipcc_tier"
+    }
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/results.schema.json",
+  "title": "results",
+  "description": "Written by the engine, one record per run; nothing here is entered. Exports as JSON plus a flat CSV of inventory rows.",
+  "type": "object",
+  "required": [
+    "run_id",
+    "production_system_id",
+    "engine_version",
+    "run_date",
+    "functional_unit",
+    "inventory"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "production_system_id": {
+      "type": "string",
+      "description": "id in production_systems"
+    },
+    "scenario_id": {
+      "type": "string",
+      "description": "id in scenarios"
+    },
+    "engine_version": {
+      "type": "string"
+    },
+    "run_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "functional_unit": {
+      "type": "string"
+    },
+    "inventory": {
+      "type": "array",
+      "description": "One row per flow per shipped pig, traceable to where it was produced",
+      "items": {
+        "type": "object",
+        "required": [
+          "flow_id",
+          "amount",
+          "system_layer",
+          "step"
+        ],
+        "properties": {
+          "flow_id": {
+            "type": "string",
+            "description": "id in flows"
+          },
+          "amount": {
+            "type": "object",
+            "description": "per functional unit",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "input",
+              "output"
+            ]
+          },
+          "compartment": {
+            "type": "string",
+            "description": "emissions: air, water or soil (flows)"
+          },
+          "carbon_origin": {
+            "type": "string",
+            "enum": [
+              "biogenic",
+              "fossil",
+              "not_applicable"
+            ]
+          },
+          "system_layer": {
+            "type": "string",
+            "enum": [
+              "foreground",
+              "direct_supply",
+              "background"
+            ]
+          },
+          "step": {
+            "type": "string",
+            "enum": [
+              "assemble",
+              "scale_herd",
+              "feed",
+              "excretion",
+              "manure_chain",
+              "land",
+              "transport",
+              "site_ops",
+              "upstream",
+              "sum"
+            ]
+          },
+          "site_id": {
+            "type": "string",
+            "description": "id in sites"
+          },
+          "stage": {
+            "type": "string",
+            "description": "herd stage"
+          },
+          "process_id": {
+            "type": "string",
+            "description": "id in unit_processes"
+          },
+          "quality_score": {
+            "type": "number",
+            "description": "aggregated pedigree score (quality)"
+          }
+        }
+      }
+    },
+    "co_products": {
+      "type": "array",
+      "description": "copied from herd.co_products (fix #3)",
+      "items": {
+        "type": "object",
+        "required": [
+          "animal",
+          "head_per_unit",
+          "live_weight_per_unit"
+        ],
+        "properties": {
+          "animal": {
+            "type": "string",
+            "enum": [
+              "cull_sow",
+              "cull_boar"
+            ]
+          },
+          "head_per_unit": {
+            "type": "object",
+            "description": "head per shipped pig",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "live_weight_per_unit": {
+            "type": "object",
+            "description": "kg per shipped pig",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "description": "Sanity checks; never change results (gap #13: ifeeder_state_feed_total)",
+      "items": {
+        "type": "object",
+        "required": [
+          "check_id",
+          "bottom_up",
+          "reference",
+          "deviation_percent",
+          "threshold_percent",
+          "flagged"
+        ],
+        "properties": {
+          "check_id": {
+            "type": "string"
+          },
+          "bottom_up": {
+            "type": "object",
+            "description": "engine total",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "reference": {
+            "type": "object",
+            "description": "reference total, e.g. IFEEDER state hog feed",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "deviation_percent": {
+            "type": "number"
+          },
+          "threshold_percent": {
+            "type": "number",
+            "default": 20
+          },
+          "flagged": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "overrides": {
+      "type": "array",
+      "description": "Every amount with origin = overridden, beside the engine's value (fix #12)",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "override_value",
+          "engine_value"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "record and field, e.g. herd_systems/swine_market_pig_2022/stages/finishing/animal_days_per_unit"
+          },
+          "override_value": {
+            "type": "object",
+            "description": "user value",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "engine_value": {
+            "type": "object",
+            "description": "what the engine would derive",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "deviation_percent": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

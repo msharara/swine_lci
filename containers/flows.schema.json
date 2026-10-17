@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/flows.schema.json",
+  "title": "flows",
+  "description": "Controlled vocabulary: one entry per thing that moves (feed ingredient, energy carrier, chemical, labor, land, nutrient, animal).",
+  "type": "object",
+  "required": [
+    "flow_id",
+    "name",
+    "category",
+    "reference_unit_id"
+  ],
+  "properties": {
+    "flow_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "feed_ingredient",
+        "energy",
+        "chemical",
+        "animal_health",
+        "labor",
+        "land",
+        "nutrient",
+        "water",
+        "animal",
+        "material",
+        "emission"
+      ]
+    },
+    "reference_unit_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "fedefl_uuid": {
+      "type": "string",
+      "description": "Federal LCA Commons Elementary Flow List match, if any"
+    },
+    "crosswalk": {
+      "type": "array",
+      "description": "source terms mapped to this flow",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "source_term"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "description": "source id (sources.schema.json)"
+          },
+          "source_term": {
+            "type": "string"
+          },
+          "conversion_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "compartment": {
+      "type": "string",
+      "enum": [
+        "air",
+        "water",
+        "soil"
+      ],
+      "description": "for emissions: receiving compartment"
+    },
+    "carbon_origin": {
+      "type": "string",
+      "enum": [
+        "biogenic",
+        "fossil",
+        "not_applicable"
+      ],
+      "description": "keeps respiration and manure CO2 (biogenic) apart from fuel CO2 (fossil)"
+    },
+    "always_model_in_full": {
+      "type": "boolean",
+      "description": "relevance list: model this input's production in full regardless of the 0.5% mass/energy cut-off (drugs, pesticides, refrigerants, AI genetic material, ...)"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/production_systems.schema.json",
+  "title": "production_systems",
+  "description": "The assembly: places a herd's stages on sites and assigns a manure system and a mortality system to each site, and selects the feeding program. Pig movements between sites become transport_links.",
+  "type": "object",
+  "required": [
+    "production_system_id",
+    "herd_id",
+    "site_configuration",
+    "placements",
+    "site_manure",
+    "feeding_program_id",
+    "site_mortality"
+  ],
+  "properties": {
+    "production_system_id": {
+      "type": "string"
+    },
+    "herd_id": {
+      "type": "string",
+      "description": "id in herd_systems"
+    },
+    "site_configuration": {
+      "type": "string",
+      "enum": [
+        "single_site_sow_to_finish",
+        "two_site_sow_nursery__finishing",
+        "three_site_sow__nursery__finishing"
+      ]
+    },
+    "placements": {
+      "type": "array",
+      "description": "one per herd stage",
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "site_id"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "gestation",
+              "farrowing_lactation",
+              "gilt_development",
+              "boar",
+              "nursery",
+              "finishing"
+            ]
+          },
+          "site_id": {
+            "type": "string",
+            "description": "id in sites"
+          }
+        }
+      }
+    },
+    "site_manure": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "site_id",
+          "manure_system_id"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "description": "id in sites"
+          },
+          "manure_system_id": {
+            "type": "string",
+            "description": "id in manure_systems"
+          }
+        }
+      }
+    },
+    "transport_link_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "id in transport_links"
+      },
+      "description": "derived from placements across sites"
+    },
+    "feeding_program_id": {
+      "type": "string",
+      "description": "id in feeding_programs"
+    },
+    "site_mortality": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "site_id",
+          "mortality_system_id"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "description": "id in sites"
+          },
+          "mortality_system_id": {
+            "type": "string",
+            "description": "id in mortality_systems"
+          }
+        }
+      }
+    },
+    "feed_mill_process_id": {
+      "type": "string",
+      "description": "Feed mill: a direct_supply unit process with region_id and energy/inputs per tonne of complete feed. Ingredient transport links end here; the engine derives mill-to-site complete-feed links. Omit for on-farm mixing (ingredients go to the sites)."
+    },
+    "manure_application": {
+      "type": "array",
+      "description": "Where each site's stored manure goes and how it is applied. Shares per site sum to 1.",
+      "items": {
+        "type": "object",
+        "required": [
+          "site_id",
+          "land_pool_id",
+          "share",
+          "method",
+          "timing",
+          "rate_basis"
+        ],
+        "properties": {
+          "site_id": {
+            "type": "string",
+            "description": "id in sites"
+          },
+          "land_pool_id": {
+            "type": "string",
+            "description": "id in land_pools (role manure_receiving)"
+          },
+          "share": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1,
+            "description": "share of the site's stored manure applied this way"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "broadcast_surface",
+              "broadcast_incorporated",
+              "injection",
+              "spray_irrigation",
+              "subsurface_drip_irrigation",
+              "banded_drop_in_canopy"
+            ],
+            "description": "drives field NH3 loss and application equipment energy; banded_drop_in_canopy = liquid dropped in bands at soil level under the canopy from a dragged hose (e.g. 360 RAIN hose-reel), usually in_season"
+          },
+          "timing": {
+            "type": "string",
+            "enum": [
+              "pre_planting",
+              "post_harvest",
+              "in_season"
+            ]
+          },
+          "rate_basis": {
+            "type": "string",
+            "enum": [
+              "nitrogen",
+              "phosphorus"
+            ],
+            "description": "set by state nutrient-management rules; sets acres needed"
+          },
+          "transport_link_id": {
+            "type": "string",
+            "description": "storage-to-field leg (transport_links)"
+          },
+          "application_process_id": {
+            "type": "string",
+            "description": "equipment energy and inputs (unit_processes), e.g. a 360 RAIN unit process: machine, hose and riser over service life, pumping and drive energy, dilution water"
+          }
+        }
+      }
+    }
+  }
+}

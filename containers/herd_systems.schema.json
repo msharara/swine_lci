@@ -1,0 +1,1105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/herd_systems.schema.json",
+  "title": "herd_systems",
+  "description": "The animals only: a group of animals fed and maintained. Converts one functional unit (one shipped market pig with its share of sows, boars and replacement gilts) into animal-days, intake, nutrient requirements and excretion per stage. No sites, housing, manure handling or diet recipes (see feeding_programs).",
+  "type": "object",
+  "required": [
+    "herd_id",
+    "species",
+    "functional_unit",
+    "reference_year",
+    "stages"
+  ],
+  "properties": {
+    "herd_id": {
+      "type": "string"
+    },
+    "species": {
+      "type": "string",
+      "enum": [
+        "swine",
+        "broiler",
+        "layer",
+        "dairy",
+        "beef"
+      ]
+    },
+    "functional_unit": {
+      "type": "string",
+      "description": "e.g. 1 shipped market pig at 2022-typical slaughter weight"
+    },
+    "reference_year": {
+      "type": "integer"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "animal_days_per_unit"
+        ],
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "gestation",
+              "farrowing_lactation",
+              "gilt_development",
+              "boar",
+              "nursery",
+              "finishing"
+            ]
+          },
+          "animal_days_per_unit": {
+            "type": "object",
+            "description": "animal-days of this stage needed per functional unit",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "body_weight_in": {
+            "type": "object",
+            "description": "body weight entering the stage",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "body_weight_out": {
+            "type": "object",
+            "description": "body weight leaving the stage",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "mortality_rate": {
+            "type": "object",
+            "description": "fraction of animals lost in this stage",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "excretion_process_id": {
+            "type": "string",
+            "description": "as-excreted manure model for this stage, e.g. D384.2 (unit_processes); custody begins after this"
+          },
+          "feed_intake": {
+            "type": "object",
+            "description": "average daily feed intake, as-fed, per head (performance of this genetics and stage)",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "average_daily_gain": {
+            "type": "object",
+            "description": "average daily gain per head",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "requirements": {
+            "type": "object",
+            "description": "nutrient requirement of the stage (biology, e.g. NRC 2012), used to check diets",
+            "properties": {
+              "net_energy": {
+                "type": "object",
+                "description": "net energy requirement per kg diet or per day",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "sid_lysine": {
+                "type": "object",
+                "description": "standardized ileal digestible lysine",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "stttd_phosphorus": {
+                "type": "object",
+                "description": "standardized total tract digestible P",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "crude_protein": {
+                "type": "object",
+                "description": "crude protein, if specified",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              }
+            }
+          },
+          "mortality_timing": {
+            "type": "object",
+            "description": "when in the stage deaths occur, as a distribution over stage progress (0 = stage start, 1 = stage end). Feed and manure of dead pigs are integrated over this distribution and the stage's intake curve. Beta skews deaths toward the start (alpha<beta) or end (alpha>beta) of the stage.",
+            "required": [
+              "distribution"
+            ],
+            "properties": {
+              "distribution": {
+                "type": "string",
+                "enum": [
+                  "uniform",
+                  "beta"
+                ],
+                "default": "uniform"
+              },
+              "beta_alpha": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "beta_beta": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources, when skewed from uniform"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "distribution": {
+                      "const": "beta"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "beta_alpha",
+                    "beta_beta"
+                  ]
+                }
+              }
+            ]
+          },
+          "cumulative_intake_curve": {
+            "type": "object",
+            "description": "published feed budget for the stage: cumulative share of stage feed eaten vs stage progress. Used first for dead-pig feed; if absent, the engine falls back to phase steps from the feeding program.",
+            "required": [
+              "points",
+              "source_id"
+            ],
+            "properties": {
+              "progress_basis": {
+                "type": "string",
+                "enum": [
+                  "days",
+                  "body_weight"
+                ],
+                "default": "days"
+              },
+              "points": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "progress",
+                    "cumulative_share"
+                  ],
+                  "properties": {
+                    "progress": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "cumulative_share": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  }
+                }
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              }
+            }
+          },
+          "dead_pig_intake_method": {
+            "type": "string",
+            "enum": [
+              "feed_budget_curve",
+              "phase_steps",
+              "proportional_days"
+            ],
+            "description": "set by the engine, not entered: feed_budget_curve when a curve exists, else phase_steps; proportional_days only as a labeled last resort"
+          }
+        }
+      }
+    },
+    "breeding": {
+      "type": "object",
+      "properties": {
+        "ai_share": {
+          "type": "object",
+          "description": "fraction of matings by artificial insemination",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in units"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "id in sources"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "id in quality"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        },
+        "litters_per_sow_year": {
+          "type": "object",
+          "description": "litters per sow per year",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in units"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "id in sources"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "id in quality"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        },
+        "pigs_weaned_per_litter": {
+          "type": "object",
+          "description": "pigs weaned per litter",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in units"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "id in sources"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "id in quality"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        },
+        "semen_supply_process_id": {
+          "type": "string",
+          "description": "boar stud process supplying semen (unit_processes)"
+        },
+        "replacement_rate": {
+          "type": "object",
+          "description": "share of the sow (or boar) herd replaced per year; culls = replacements minus breeding-herd deaths",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in units"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "id in sources"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "id in quality"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        },
+        "cull_weight": {
+          "type": "object",
+          "description": "live weight of a cull sow at removal",
+          "required": [
+            "value",
+            "unit_id",
+            "basis",
+            "source_id"
+          ],
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "unit_id": {
+              "type": "string",
+              "description": "id in units"
+            },
+            "basis": {
+              "type": "string",
+              "enum": [
+                "as_fed",
+                "dry_matter",
+                "per_head",
+                "per_head_day",
+                "per_stage",
+                "per_functional_unit",
+                "per_area",
+                "absolute"
+              ]
+            },
+            "source_id": {
+              "type": "string",
+              "description": "id in sources"
+            },
+            "quality_id": {
+              "type": "string",
+              "description": "id in quality"
+            },
+            "note": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string",
+              "enum": [
+                "entered",
+                "derived",
+                "overridden"
+              ],
+              "default": "entered",
+              "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+            }
+          }
+        }
+      }
+    },
+    "genetics": {
+      "type": "string",
+      "description": "genetic line or class, e.g. lean_growth_capacity high/high_moderate/moderate"
+    },
+    "co_products": {
+      "type": "array",
+      "readOnly": true,
+      "description": "Set by the engine, not entered. Animals leaving the farm alive other than the functional unit, per shipped pig. Reported only; no allocation in v1, so all burdens stay on the market pig.",
+      "items": {
+        "type": "object",
+        "required": [
+          "animal",
+          "head_per_unit",
+          "live_weight_per_unit"
+        ],
+        "properties": {
+          "animal": {
+            "type": "string",
+            "enum": [
+              "cull_sow",
+              "cull_boar"
+            ]
+          },
+          "head_per_unit": {
+            "type": "object",
+            "description": "head per shipped pig",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "live_weight_per_unit": {
+            "type": "object",
+            "description": "kg live weight per shipped pig",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

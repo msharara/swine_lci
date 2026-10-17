@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/sources.schema.json",
+  "title": "sources",
+  "description": "Provenance: every value points to one of these.",
+  "type": "object",
+  "required": [
+    "source_id",
+    "citation",
+    "year",
+    "kind",
+    "role"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "citation": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "region_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "measured",
+        "survey_statistic",
+        "standard",
+        "model",
+        "literature",
+        "expert_default"
+      ]
+    },
+    "doi_or_url": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "raw_file": {
+      "type": "string",
+      "description": "path under data/raw"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "primary_data",
+        "sanity_check",
+        "background"
+      ],
+      "description": "primary_data feeds the model; sanity_check values only bound or flag inputs; background informs understanding, no numbers used"
+    }
+  }
+}

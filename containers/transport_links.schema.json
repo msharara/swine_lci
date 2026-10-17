@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/transport_links.schema.json",
+  "title": "transport_links",
+  "description": "Every movement between two locations: feed, animals, manure, supplies, mortalities.",
+  "type": "object",
+  "required": [
+    "link_id",
+    "flow_id",
+    "origin_region_id",
+    "destination_region_id",
+    "mode",
+    "distance"
+  ],
+  "properties": {
+    "link_id": {
+      "type": "string"
+    },
+    "flow_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "quantity": {
+      "type": "object",
+      "description": "mass or head moved per functional unit",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in another container"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "source id (sources.schema.json)"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "quality record id (quality.schema.json)"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "origin_region_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "destination_region_id": {
+      "type": "string",
+      "description": "id in another container"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "truck",
+        "rail",
+        "barge",
+        "livestock_trailer",
+        "manure_tanker",
+        "dragline",
+        "pipeline"
+      ]
+    },
+    "distance": {
+      "type": "object",
+      "description": "one-way distance",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in another container"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "source id (sources.schema.json)"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "quality record id (quality.schema.json)"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "load_factor": {
+      "type": "number"
+    },
+    "empty_return": {
+      "type": "boolean"
+    },
+    "distance_method": {
+      "type": "string",
+      "enum": [
+        "region_centroid",
+        "user_route"
+      ]
+    },
+    "inside_boundary": {
+      "type": "boolean",
+      "description": "false for market animals to processor"
+    }
+  }
+}

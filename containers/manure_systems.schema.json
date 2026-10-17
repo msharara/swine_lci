@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/manure_systems.schema.json",
+  "title": "manure_systems",
+  "description": "Manure custody chain from the barn floor to the storage exit: in-house collection, then ordered external steps. Starts where excretion ends; land application is handled by land_pools.",
+  "type": "object",
+  "required": [
+    "manure_system_id",
+    "in_house"
+  ],
+  "properties": {
+    "manure_system_id": {
+      "type": "string"
+    },
+    "in_house": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "deep_pit",
+            "shallow_pit"
+          ]
+        },
+        "process_id": {
+          "type": "string",
+          "description": "losses and infrastructure of the in-house step (unit_processes)"
+        }
+      }
+    },
+    "external_steps": {
+      "type": "array",
+      "description": "in order of flow",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "slurry_tank_above_ground",
+              "anaerobic_digester",
+              "anaerobic_lagoon_single_stage",
+              "anaerobic_lagoon_multi_stage"
+            ]
+          },
+          "process_id": {
+            "type": "string",
+            "description": "losses and infrastructure of this step (unit_processes)"
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "in_house": {
+            "properties": {
+              "type": {
+                "const": "deep_pit"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "external_steps": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "in_house": {
+            "properties": {
+              "type": {
+                "const": "shallow_pit"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "external_steps"
+        ],
+        "properties": {
+          "external_steps": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

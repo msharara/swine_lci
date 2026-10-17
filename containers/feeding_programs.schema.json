@@ -1,0 +1,580 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/feeding_programs.schema.json",
+  "title": "feeding_programs",
+  "description": "Management choice: the phase diets fed to each stage, as a nutrient specification plus an ingredient recipe. Region-specific (e.g. DDGS use in Iowa). Each ingredient links to an origin region and a transport link.",
+  "type": "object",
+  "required": [
+    "feeding_program_id",
+    "region_id",
+    "phases"
+  ],
+  "properties": {
+    "feeding_program_id": {
+      "type": "string"
+    },
+    "region_id": {
+      "type": "string",
+      "description": "id in regions"
+    },
+    "reference_year": {
+      "type": "integer"
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "phase_id",
+          "stage",
+          "diet_spec",
+          "recipe"
+        ],
+        "properties": {
+          "phase_id": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string",
+            "enum": [
+              "gestation",
+              "farrowing_lactation",
+              "gilt_development",
+              "boar",
+              "nursery",
+              "finishing"
+            ]
+          },
+          "body_weight_from": {
+            "type": "object",
+            "description": "start of phase body weight",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "body_weight_to": {
+            "type": "object",
+            "description": "end of phase body weight",
+            "required": [
+              "value",
+              "unit_id",
+              "basis",
+              "source_id"
+            ],
+            "properties": {
+              "value": {
+                "type": "number"
+              },
+              "unit_id": {
+                "type": "string",
+                "description": "id in units"
+              },
+              "basis": {
+                "type": "string",
+                "enum": [
+                  "as_fed",
+                  "dry_matter",
+                  "per_head",
+                  "per_head_day",
+                  "per_stage",
+                  "per_functional_unit",
+                  "per_area",
+                  "absolute"
+                ]
+              },
+              "source_id": {
+                "type": "string",
+                "description": "id in sources"
+              },
+              "quality_id": {
+                "type": "string",
+                "description": "id in quality"
+              },
+              "note": {
+                "type": "string"
+              },
+              "origin": {
+                "type": "string",
+                "enum": [
+                  "entered",
+                  "derived",
+                  "overridden"
+                ],
+                "default": "entered",
+                "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+              }
+            }
+          },
+          "diet_spec": {
+            "type": "object",
+            "description": "what the diet supplies; feeds D384.2 inputs (C_CP, C_P, DM)",
+            "properties": {
+              "crude_protein": {
+                "type": "object",
+                "description": "CP concentration",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "total_phosphorus": {
+                "type": "object",
+                "description": "total P concentration",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "dry_matter": {
+                "type": "object",
+                "description": "DM concentration",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "net_energy": {
+                "type": "object",
+                "description": "energy density",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "sid_lysine": {
+                "type": "object",
+                "description": "SID lysine",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              },
+              "dm_digestibility": {
+                "type": "object",
+                "description": "dry matter digestibility",
+                "required": [
+                  "value",
+                  "unit_id",
+                  "basis",
+                  "source_id"
+                ],
+                "properties": {
+                  "value": {
+                    "type": "number"
+                  },
+                  "unit_id": {
+                    "type": "string",
+                    "description": "id in units"
+                  },
+                  "basis": {
+                    "type": "string",
+                    "enum": [
+                      "as_fed",
+                      "dry_matter",
+                      "per_head",
+                      "per_head_day",
+                      "per_stage",
+                      "per_functional_unit",
+                      "per_area",
+                      "absolute"
+                    ]
+                  },
+                  "source_id": {
+                    "type": "string",
+                    "description": "id in sources"
+                  },
+                  "quality_id": {
+                    "type": "string",
+                    "description": "id in quality"
+                  },
+                  "note": {
+                    "type": "string"
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "entered",
+                      "derived",
+                      "overridden"
+                    ],
+                    "default": "entered",
+                    "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                  }
+                }
+              }
+            }
+          },
+          "recipe": {
+            "type": "array",
+            "description": "ingredients and inclusion rates",
+            "items": {
+              "type": "object",
+              "required": [
+                "flow_id",
+                "inclusion"
+              ],
+              "properties": {
+                "flow_id": {
+                  "type": "string",
+                  "description": "ingredient in flows"
+                },
+                "inclusion": {
+                  "type": "object",
+                  "description": "inclusion rate, as-fed fraction of diet",
+                  "required": [
+                    "value",
+                    "unit_id",
+                    "basis",
+                    "source_id"
+                  ],
+                  "properties": {
+                    "value": {
+                      "type": "number"
+                    },
+                    "unit_id": {
+                      "type": "string",
+                      "description": "id in units"
+                    },
+                    "basis": {
+                      "type": "string",
+                      "enum": [
+                        "as_fed",
+                        "dry_matter",
+                        "per_head",
+                        "per_head_day",
+                        "per_stage",
+                        "per_functional_unit",
+                        "per_area",
+                        "absolute"
+                      ]
+                    },
+                    "source_id": {
+                      "type": "string",
+                      "description": "id in sources"
+                    },
+                    "quality_id": {
+                      "type": "string",
+                      "description": "id in quality"
+                    },
+                    "note": {
+                      "type": "string"
+                    },
+                    "origin": {
+                      "type": "string",
+                      "enum": [
+                        "entered",
+                        "derived",
+                        "overridden"
+                      ],
+                      "default": "entered",
+                      "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+                    }
+                  }
+                },
+                "origin_region_id": {
+                  "type": "string",
+                  "description": "where the ingredient is grown or made (regions)"
+                },
+                "transport_link_id": {
+                  "type": "string",
+                  "description": "Ingredient leg from origin to the feed mill named by the production system (or to the site when mixed on farm)"
+                },
+                "provider_process_id": {
+                  "type": "string",
+                  "description": "production process of the ingredient (unit_processes)"
+                }
+              }
+            }
+          },
+          "intake_share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "readOnly": true,
+            "description": "Set by the engine: this phase's share of the stage's feed intake. D384.2 runs forward per phase on this intake and the phase diet."
+          },
+          "intake_share_method": {
+            "type": "string",
+            "enum": [
+              "intake_curve",
+              "weight_gain_share"
+            ],
+            "readOnly": true,
+            "description": "Set by the engine: intake_curve reads the herd stage cumulative_intake_curve at body_weight_from/to; weight_gain_share (fallback) uses the phase's share of stage weight gain."
+          }
+        }
+      }
+    }
+  }
+}

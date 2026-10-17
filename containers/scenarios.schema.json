@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/scenarios.schema.json",
+  "title": "scenarios",
+  "description": "Named overrides layered on the defaults, e.g. farm presets.",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "name",
+    "overrides"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "overrides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target",
+          "value"
+        ],
+        "properties": {
+          "target": {
+            "type": "string",
+            "description": "container/id/field path"
+          },
+          "value": {},
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

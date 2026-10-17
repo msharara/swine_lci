@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/units.schema.json",
+  "title": "units",
+  "description": "Units and conversion factors to SI; also as-fed to dry-matter factors per flow.",
+  "type": "object",
+  "required": [
+    "unit_id",
+    "symbol",
+    "dimension",
+    "to_si_factor",
+    "si_unit"
+  ],
+  "properties": {
+    "unit_id": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "dimension": {
+      "type": "string",
+      "enum": [
+        "mass",
+        "volume",
+        "energy",
+        "area",
+        "length",
+        "time",
+        "labor_time",
+        "count",
+        "mass_distance"
+      ]
+    },
+    "to_si_factor": {
+      "type": "number"
+    },
+    "si_unit": {
+      "type": "string"
+    },
+    "flow_specific": {
+      "type": "string",
+      "description": "flow_id when the factor depends on the flow (e.g. bushel of corn to kg)"
+    }
+  }
+}

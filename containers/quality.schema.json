@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lci/containers/quality.schema.json",
+  "title": "quality",
+  "description": "Data quality record: pedigree scores (1 best, 5 worst) and uncertainty range.",
+  "type": "object",
+  "required": [
+    "quality_id",
+    "pedigree"
+  ],
+  "properties": {
+    "quality_id": {
+      "type": "string"
+    },
+    "pedigree": {
+      "type": "object",
+      "required": [
+        "reliability",
+        "completeness",
+        "temporal",
+        "geographic",
+        "technological"
+      ],
+      "properties": {
+        "reliability": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "completeness": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "temporal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "geographic": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "technological": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
+      }
+    },
+    "distribution": {
+      "type": "string",
+      "enum": [
+        "lognormal",
+        "normal",
+        "triangular",
+        "uniform",
+        "none"
+      ]
+    },
+    "low": {
+      "type": "number"
+    },
+    "high": {
+      "type": "number"
+    }
+  }
+}
