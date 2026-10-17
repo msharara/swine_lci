@@ -1,6 +1,6 @@
 # Data
 
-Pipeline: `staged/` (values copied from sources, with page and table) → `scripts/` (harmonize to SI and derive) → `model/` (records that validate against `containers/`). `sources/` and `quality/` hold the source and pedigree records the values cite. Rebuild with `python3 data/scripts/build_herd.py`.
+Pipeline: `staged/` (values copied from sources, with page and table) → `scripts/` (harmonize to SI and derive) → `model/` (records that validate against `containers/`). `sources/` and `quality/` hold the source and pedigree records the values cite. Rebuild with `python3 data/scripts/build_herd.py` and `python3 data/scripts/build_feed.py`.
 
 ## Herd module (2022, US)
 
@@ -23,3 +23,27 @@ Feed per shipped pig is 391 kg: gestation 24.3, lactation 10.9, gilts 10.3, nurs
 - Replacement rate is the unweighted mean of 2024 farm-size groups; no overall or 2022 value is printed.
 - MetaFarms and NASS hosts block direct download here, so values were transcribed through a web reader. Check them against the PDFs before sign-off.
 - Unit ids (animal_day, kg_per_day, ...) await the units vocabulary.
+
+## Feeding programs (NC and Iowa)
+
+Recipes are published extension and public diets (Mahmoud's choice), picked per phase in `staged/feed/phase_selection.csv` from `staged/feed/extension_diets_raw.csv`. NC uses corn-soybean meal diets throughout. Iowa uses DDGS diets where a public one exists (nursery phases 2 and 3 at 10%, finishing at 30% from 34 to 59 kg and 15% from 79 kg to market) and corn-SBM elsewhere. Lab markers (titanium dioxide) are dropped and recipes renormalized. Where a diet prints no total P, the matching KSU MF-2301 (2007) band is used and labeled as a fallback.
+
+### Sanity check against IFEEDER 2023 (grow-out feed only)
+| Ingredient share | NC model | NC IFEEDER | IA model | IA IFEEDER |
+|---|---|---|---|---|
+| Corn | 0.768 | 0.705 | 0.697 | 0.654 |
+| Soybean meal | 0.201 | 0.086 | 0.132 | 0.108 |
+| DDGS | 0.000 | 0.065 | 0.138 | 0.116 |
+
+Iowa is close. NC soybean meal is more than twice IFEEDER's share: the public KSU corn-SBM diets use more SBM than NC's actual mix, which leans on wheat, byproducts and synthetic amino acids.
+
+### NC State 2005 program (staged, not used)
+`staged/feed/ncsu_2005_program.csv` holds the NC State 2005 nursery-to-finish program (7 phases, with CP, total P, feed budget per pig and in-feed antibiotics), transcribed from the extension page's Table 2; every phase sums to 100%. It is the only NC-specific public diet found, but it predates the 2019-2025 window by 14 years, carries about 7% lard, and its soybean meal (12-34%) is as high as the KSU diets, so it does not fix the NC soybean meal gap. Role: sanity check.
+
+### Known gaps
+- No public gilt development diet: market-pig grow-finish diets stand in (PIC says gilt Lys:energy follows market gilts).
+- No public early-gestation diet after 2015: the late-gestation control diet is used for all of gestation.
+- No NC or Southeast public diets; all recent diets are from Kansas State. Grow-finish diets are research treatments (the Low SBM arm, closest to practice), not recommendations.
+- Nursery diets print no total P and MF-2301 has no nursery band, so nursery total P is empty.
+- Sow and gilt daily feed intake are not yet in the herd record.
+- Licensing: KSU material is free for educational use, all other rights reserved (not Creative Commons).

@@ -1,0 +1,72 @@
+[
+  {
+    "source_id": "ksu_nursery_diets_2019",
+    "citation": "Kansas State University. 2019. Examples of Swine Nursery Diets (February 2019). K-State Swine Nutrition Guide.",
+    "year": 2019,
+    "region_id": "KS",
+    "kind": "expert_default",
+    "role": "primary_data",
+    "doi_or_url": "https://www.asi.k-state.edu/extension/swine/files/KSU%20Example%20Nursery%20Diets%20February%202019.pdf",
+    "license": "free for educational use; all other rights reserved"
+  },
+  {
+    "source_id": "ksu_swineday_2024_sow",
+    "citation": "Jenkins et al. 2024. Kansas Agricultural Experiment Station Research Reports (Swine Day). Late gestation and lactation diets.",
+    "year": 2024,
+    "region_id": "KS",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://journals.newprairiepress.org/kaesrr/article/6918/galley/6855/download/",
+    "license": "free for educational use; all other rights reserved"
+  },
+  {
+    "source_id": "ksu_swineday_2024_gf",
+    "citation": "Kim et al. 2024. Kansas Agricultural Experiment Station Research Reports (Swine Day). Corn-soybean meal grow-finish diets, Low SBM treatment.",
+    "year": 2024,
+    "region_id": "KS",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://journals.newprairiepress.org/kaesrr/article/6902/galley/6839/download/",
+    "license": "free for educational use; all other rights reserved"
+  },
+  {
+    "source_id": "ksu_swineday_2025_ddgs",
+    "citation": "Giacomini et al. 2025. Kansas Agricultural Experiment Station Research Reports (Swine Day). Finishing diets with 30% and 15% DDGS.",
+    "year": 2025,
+    "region_id": "KS",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://journals.newprairiepress.org/kaesrr/article/6796/galley/6735/download/",
+    "license": "free for educational use; all other rights reserved"
+  },
+  {
+    "source_id": "ksu_mf2301_2007",
+    "citation": "Kansas State University. 2007. Growing-Finishing Pig Recommendations, MF-2301.",
+    "year": 2007,
+    "region_id": "KS",
+    "kind": "expert_default",
+    "role": "background",
+    "doi_or_url": "https://bookstore.ksre.ksu.edu/pubs/growing-finishing-pig-recommendations_MF2301.pdf",
+    "license": "free for educational use"
+  },
+  {
+    "source_id": "ifeeder_2025",
+    "citation": "Decision Innovation Solutions. 2025. Animal Feed Consumption Report, 2025 update (CY2023). IFEEDER.",
+    "year": 2025,
+    "region_id": "US",
+    "kind": "model",
+    "role": "sanity_check",
+    "raw_file": "project-files reference/IFEEDER_Animal_Feed_Consumption_Report_2025_text.txt"
+  },
+  {
+    "source_id": "ncsu_2005_program",
+    "citation": "Knauer, M. and E. van Heugten. 2020. Slow pig growth by turning back the clock on your feeding program. NC State Extension, Swine. Table 2: 2005 feeding program.",
+    "year": 2020,
+    "region_id": "NC",
+    "kind": "literature",
+    "role": "sanity_check",
+    "doi_or_url": "https://swine.ces.ncsu.edu/swinehusbandrytopics/nutrition/",
+    "license": "public extension page",
+    "raw_file": "table image https://eit-wagpress-prod.s3.amazonaws.com/media/images/2021-01-nhf-ncsu-060420-table2.max-1200x700.jpg"
+  }
+]
