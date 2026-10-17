@@ -1,0 +1,28 @@
+metric,phase,value,unit,year,page,table,note
+pigs_weaned_per_mated_female_year,sow,25.92,pigs/mated female/yr,2022,4,Sow farm annual averages,
+average_born_alive,sow,13.81,pigs/litter,2022,4,Sow farm annual averages,
+pre_wean_mortality,sow,14.6,percent,2022,4,Sow farm annual averages,
+farrowing_rate,sow,83.7,percent,2022,4,Sow farm annual averages,
+average_wean_age,sow,21.3,days,2022,4,Sow farm annual averages,unit not printed; days inferred
+pigs_weaned_per_sow_farrowed,sow,11.27,pigs/litter,2022,4,Sow farm annual averages,
+sow_death_loss,sow,13.5,percent/yr,2022,4,Sow farm annual averages,
+replacement_rate_farm_lt1000,sow,66.4,percent/yr,2024,8,Performance by Sow Farm Size (2024),no overall value printed
+replacement_rate_farm_1000_2000,sow,56.5,percent/yr,2024,8,Performance by Sow Farm Size (2024),
+replacement_rate_farm_2000_3000,sow,65.1,percent/yr,2024,8,Performance by Sow Farm Size (2024),
+replacement_rate_farm_3000_4000,sow,52.6,percent/yr,2024,8,Performance by Sow Farm Size (2024),
+replacement_rate_farm_ge4000,sow,60.1,percent/yr,2024,8,Performance by Sow Farm Size (2024),
+mortality,nursery,4.20,percent,2022,16,Nursery annual averages,
+weight_out,nursery,50.86,lb,2022,16,Nursery annual averages,unit not printed; lb inferred
+days_on_feed,nursery,43.9,days,2022,16,Nursery annual averages,
+average_daily_gain,nursery,0.85,lb/day,2022,16,Nursery annual averages,unit not printed; lb inferred
+feed_conversion,nursery,1.58,lb feed/lb gain,2022,16,Nursery annual averages,dead-pig treatment not stated
+mortality,finishing,5.39,percent,2022,17,Finish annual averages,
+weight_out,finishing,284.06,lb,2022,17,Finish annual averages,unit not printed; lb inferred
+days_on_feed,finishing,118.3,days,2022,17,Finish annual averages,
+average_daily_gain,finishing,1.94,lb/day,2022,17,Finish annual averages,
+feed_conversion,finishing,2.85,lb feed/lb gain,2022,17,Finish annual averages,dead-pig treatment not stated
+mortality,wean_to_finish,6.89,percent,2022,18,Wean-to-finish annual averages,cross-check only
+weight_out,wean_to_finish,281.71,lb,2022,18,Wean-to-finish annual averages,cross-check only
+days_on_feed,wean_to_finish,157.5,days,2022,18,Wean-to-finish annual averages,cross-check only
+average_daily_gain,wean_to_finish,1.70,lb/day,2022,18,Wean-to-finish annual averages,cross-check only
+feed_conversion,wean_to_finish,2.62,lb feed/lb gain,2022,18,Wean-to-finish annual averages,cross-check only

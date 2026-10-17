@@ -1,0 +1,234 @@
+{
+  "herd_id": "swine_market_pig_2022_us",
+  "species": "swine",
+  "functional_unit": "1 shipped market pig at 2022 US commercial average live weight (131.1 kg), incl. its share of sows, gilts and boars",
+  "reference_year": 2022,
+  "genetics": "US commercial average (MetaFarms benchmark population)",
+  "breeding": {
+    "litters_per_sow_year": {
+      "value": 2.2999,
+      "unit_id": "litter_per_female_year",
+      "basis": "absolute",
+      "source_id": "derived_build_herd",
+      "quality_id": "q_derived",
+      "origin": "derived",
+      "note": "PWMFY / pigs weaned per sow farrowed"
+    },
+    "pigs_weaned_per_litter": {
+      "value": 11.27,
+      "unit_id": "head_per_litter",
+      "basis": "absolute",
+      "source_id": "metafarms_2024_npb",
+      "quality_id": "q_mf_2022",
+      "origin": "entered",
+      "note": "Pigs Weaned/Sow Farrowed, p.4"
+    },
+    "replacement_rate": {
+      "value": 0.6014,
+      "unit_id": "fraction_per_year",
+      "basis": "absolute",
+      "source_id": "derived_build_herd",
+      "quality_id": "q_derived",
+      "origin": "derived",
+      "note": "unweighted mean of 2024 farm-size groups (p.8); no overall or 2022 value printed"
+    }
+  },
+  "stages": [
+    {
+      "stage": "gestation",
+      "animal_days_per_unit": {
+        "value": 13.4514,
+        "unit_id": "animal_day",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "female-years per pig x (litters x 114 d gestation + open days); open days = 365 - gestation - lactation"
+      },
+      "mortality_rate": {
+        "value": 0.135,
+        "unit_id": "fraction_per_year",
+        "basis": "absolute",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "Sow Death Loss, p.4; annual rate for the breeding herd"
+      }
+    },
+    {
+      "stage": "farrowing_lactation",
+      "animal_days_per_unit": {
+        "value": 2.0852,
+        "unit_id": "animal_day",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "female-years per pig x litters x wean age (21.3 d)"
+      }
+    },
+    {
+      "stage": "gilt_development",
+      "animal_days_per_unit": {
+        "value": 4.8946,
+        "unit_id": "animal_day",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "gilts per pig (female-years x replacement) x days from weaning to first breeding (PIC 200-225 d age midpoint minus wean age)"
+      },
+      "body_weight_out": {
+        "value": 147.5,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "pic_nutrition_2025",
+        "quality_id": "q_pic_2025",
+        "origin": "entered",
+        "note": "midpoint of 135-160 kg first-breeding target"
+      }
+    },
+    {
+      "stage": "nursery",
+      "animal_days_per_unit": {
+        "value": 47.4182,
+        "unit_id": "animal_day",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "pigs placed per shipped pig x days on feed, deaths at mid-stage"
+      },
+      "body_weight_in": {
+        "value": 6.1439,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "weight out - ADG x days on feed"
+      },
+      "body_weight_out": {
+        "value": 23.0697,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "50.86 lb, p.16"
+      },
+      "mortality_rate": {
+        "value": 0.042,
+        "unit_id": "fraction",
+        "basis": "per_stage",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "p.16"
+      },
+      "average_daily_gain": {
+        "value": 0.3856,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "0.85 lb/d, p.16"
+      },
+      "feed_intake": {
+        "value": 0.6092,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "feed conversion 1.58 x ADG; as-fed"
+      },
+      "mortality_timing": {
+        "distribution": "uniform"
+      }
+    },
+    {
+      "stage": "finishing",
+      "animal_days_per_unit": {
+        "value": 126.2492,
+        "unit_id": "animal_day",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "pigs placed per shipped pig x days to market weight, deaths at mid-stage"
+      },
+      "body_weight_in": {
+        "value": 23.0697,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "= nursery weight out"
+      },
+      "body_weight_out": {
+        "value": 131.0882,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "nass_lsan0423",
+        "quality_id": "q_nass_2022",
+        "origin": "entered",
+        "note": "2022 US commercial average live weight 289 lb; MetaFarms closeout 284.06 lb"
+      },
+      "mortality_rate": {
+        "value": 0.0539,
+        "unit_id": "fraction",
+        "basis": "per_stage",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "p.17"
+      },
+      "average_daily_gain": {
+        "value": 0.88,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "metafarms_2024_npb",
+        "quality_id": "q_mf_2022",
+        "origin": "entered",
+        "note": "1.94 lb/d, p.17"
+      },
+      "feed_intake": {
+        "value": 2.5079,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "feed conversion 2.85 x ADG; as-fed"
+      },
+      "mortality_timing": {
+        "distribution": "uniform"
+      }
+    }
+  ],
+  "co_products": [
+    {
+      "animal": "cull_sow",
+      "head_per_unit": {
+        "value": 0.0199,
+        "unit_id": "head",
+        "basis": "per_functional_unit",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "female-years per pig x (replacement - sow death loss)"
+      },
+      "live_weight_per_unit": {
+        "value": 0,
+        "unit_id": "kg",
+        "basis": "per_functional_unit",
+        "source_id": "TBD",
+        "note": "cull sow live weight not yet sourced",
+        "origin": "entered"
+      }
+    }
+  ]
+}
