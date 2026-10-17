@@ -4,3 +4,11 @@ gilt_first_breeding_age_low,200,days,41,G gilt development,
 gilt_first_breeding_age_high,225,days,41,G gilt development,
 gilt_first_breeding_weight_low,135,kg,41,G gilt development,
 gilt_first_breeding_weight_high,160,kg,41,G gilt development,
+gestation_me_intake_base_light_gilts,5.9,Mcal ME/day,47,H gestation,"base level for categories 3a-4 when average gilt breeding weight < 160 kg"
+gestation_me_intake_base,6.7,Mcal ME/day,47,H gestation,"base level for categories 3a-4"
+lactation_intake_p1_c0,3.234049,lb/day,,I lactation (Figure I6),"ADFI parity 1 = (c0 + c1*day + c2*day^2)/2.204622 kg/d"
+lactation_intake_p1_c1,0.949148,lb/day,,I lactation (Figure I6),
+lactation_intake_p1_c2,-0.022863,lb/day,,I lactation (Figure I6),
+lactation_intake_p2_c0,4.104837,lb/day,,I lactation (Figure I7),"ADFI parity 2+"
+lactation_intake_p2_c1,1.201068,lb/day,,I lactation (Figure I7),
+lactation_intake_p2_c2,-0.031364,lb/day,,I lactation (Figure I7),

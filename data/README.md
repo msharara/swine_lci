@@ -8,9 +8,15 @@ One US herd from MetaFarms 2022 benchmarks serves both North Carolina and Iowa. 
 
 Derived per shipped pig (animal-days): gestation and open 13.45, farrowing-lactation 2.09, gilt development 4.89, nursery 47.42, finishing 126.25. Wean weight 6.14 kg; market weight 131.1 kg (NASS 2022 commercial average, 289 lb); finishing runs 122.8 d to reach it at MetaFarms ADG.
 
+### Feed intake (as-fed, per head per day)
+Gestation 1.81 kg/d: PIC base energy level of 5.9 Mcal ME/d (used when gilt breeding weight is under 160 kg; ours is 147.5) divided by the gestation diet's ME (KSU Swine Day 2024 control, 3.27 Mcal/kg), also applied to open days. Lactation 5.24 kg/d: PIC's published daily intake curves for parity 1 and parity 2+ averaged over the 21.3-day lactation, weighted by a parity-1 share of 0.26 (replacement rate / litters per year). Gilts 2.11 kg/d: finishing feed conversion times gilt ADG (0.74 kg/d), because no open gilt intake source exists. Nursery and finishing come from MetaFarms feed conversion times ADG.
+
+Feed per shipped pig is 391 kg: gestation 24.3, lactation 10.9, gilts 10.3, nursery 28.9, finishing 316.6. As a rough check, IFEEDER's 2023 US hog feed (55.2 Mt) over about 125 M hogs slaughtered gives about 440 kg per head, which also feeds inventory carried over and exported pigs. Chiba (2023, NRC 2012 based) sow intakes (gestation 2.1 to 2.3, lactation 5.9 to 6.6 kg/d) are kept as a sanity check only, since the book is not open.
+
 ### Known gaps
 - Cull sow live weight: not yet sourced (NASS gives sow dressed weight only, 299 lb).
 - Boars and AI share: no 2022 source in hand; boar stage omitted.
+- Gilt feed intake is derived (finishing feed conversion x gilt ADG), not sourced.
 - Gilt development: mortality not sourced; whether gilts are raised in-house or bought from a multiplier is still open.
 - Farrowing room days before farrowing are not counted; lactation = wean age.
 - MetaFarms does not state whether feed conversion includes feed eaten by pigs that died.
