@@ -1,0 +1,17 @@
+metric,region,value,unit,year,report,table,note
+pigs_per_litter_annual,IA,11.48,pigs saved/litter,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop (Dec 2021-Nov 2022),
+pigs_per_litter_annual,NC,10.74,pigs saved/litter,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop (Dec 2021-Nov 2022),
+pigs_per_litter_annual,US,11.07,pigs saved/litter,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop (Dec 2021-Nov 2022),
+sows_farrowing_annual,IA,1985,1000 head,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop,
+sows_farrowing_annual,NC,1660,1000 head,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop,
+pig_crop_annual,IA,22784,1000 head,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop,
+pig_crop_annual,NC,17804,1000 head,2022,hgpg1222,Annual Sows Farrowing Pigs per Litter and Pig Crop,
+breeding_inventory_dec1,IA,930,1000 head,2022,hgpg1222,Breeding Market and Total Inventory Dec 1,
+breeding_inventory_dec1,NC,800,1000 head,2022,hgpg1222,Breeding Market and Total Inventory Dec 1,
+market_inventory_dec1,IA,22670,1000 head,2022,hgpg1222,Breeding Market and Total Inventory Dec 1,
+market_inventory_dec1,NC,7400,1000 head,2022,hgpg1222,Breeding Market and Total Inventory Dec 1,
+commercial_avg_live_weight,US,289,lb,2022,lsan0423,Slaughter and Average Live Weight by Species and Month (2022 Total),hogs; state rows not in text extract
+fi_barrows_gilts_slaughter,US,121313.9,1000 head,2022,lsan0423,Federally Inspected Slaughter by Classification,
+fi_sows_slaughter,US,3066.7,1000 head,2022,lsan0423,Federally Inspected Slaughter by Classification,
+fi_boars_slaughter,US,293.0,1000 head,2022,lsan0423,Federally Inspected Slaughter by Classification,
+fi_sow_avg_dressed_weight,US,299,lb,2022,lsan0423,FI Average Dressed Weight by Classification (2022 Average),

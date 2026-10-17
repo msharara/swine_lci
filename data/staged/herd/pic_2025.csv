@@ -1,0 +1,6 @@
+metric,value,unit,page,section,note
+gestation_length,114,days,,H gestation (text line 1715: d1 to 90 and d90 to 114 of gestation),
+gilt_first_breeding_age_low,200,days,41,G gilt development,
+gilt_first_breeding_age_high,225,days,41,G gilt development,
+gilt_first_breeding_weight_low,135,kg,41,G gilt development,
+gilt_first_breeding_weight_high,160,kg,41,G gilt development,
