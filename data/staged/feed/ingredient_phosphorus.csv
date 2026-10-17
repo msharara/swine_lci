@@ -1,0 +1,28 @@
+flow_id,total_p_pct_as_fed,source_id,page_or_table,as_printed,note
+corn,0.24,bailey_2023_tas,"Table 3, p. 4",0.24 % as-fed (DM 84.81 %),analyzed
+soybean_meal,0.63,bailey_2023_tas,"Table 3, p. 4",0.63 % as-fed (DM 88.22 %),analyzed
+spray_dried_plasma,1.58,bailey_2023_tas,"Table 3, p. 4",1.58 % as-fed (DM 91.71 %),analyzed
+fish_meal,3.28,bailey_2023_tas,"Table 3, p. 4",3.28 % as-fed (DM 91.93 %),analyzed
+whey,0.95,bailey_2023_tas,"Table 3, p. 4",0.95 % as-fed (DM 90.92 %),analyzed whey powder
+enzyme_treated_soybean_meal,0.78,bailey_2023_tas,"Table 3, p. 4",0.78 % as-fed (DM 89.72 %),proxy: fermented soybean meal (no open value for enzyme-treated SBM)
+ddgs,0.70,feedipedia_ddgs,"node/12282, Maize DDGS table (updated 2014-02-13)",7.9 g/kg DM; DM 89.0 % as-fed; n(P)=138,converted 7.9 x 0.890 / 10
+whey_permeate,0.57,kim_2012_whey,Table 1,0.57 % as-fed (DM 97.65 %),"conventional whey permeate; outside 2019-2025 window, no newer open value"
+monocalcium_phosphate,24.57,stoichiometry,Ca(H2PO4)2.H2O,2 x 30.974 / 252.07,pure monohydrate; feed-grade product may be lower
+limestone,0,stoichiometry,CaCO3,no P,
+salt,0,stoichiometry,NaCl,no P,
+zinc_oxide,0,stoichiometry,ZnO,no P,
+copper_sulfate,0,stoichiometry,CuSO4.5H2O,no P,
+l_lysine_hcl,0,stoichiometry,amino acid,no P,
+dl_methionine,0,stoichiometry,amino acid,no P,
+l_threonine,0,stoichiometry,amino acid,no P,
+l_valine,0,stoichiometry,amino acid,no P,
+l_tryptophan,0,stoichiometry,amino acid,no P,
+vitamin_premix,0,assumed,premix,not printed,assumed negligible P
+trace_mineral_premix,0,assumed,premix,not printed,assumed negligible P
+l_isoleucine,0,stoichiometry,amino acid,no P,
+liquid_lysine_55,0,stoichiometry,amino acid solution,no P,
+copper_chloride,0,stoichiometry,CuCl2 / Cu2(OH)3Cl,no P,
+soybean_oil,0,stoichiometry,triglyceride,no P,
+beef_tallow,0,stoichiometry,triglyceride,no P,
+phytase,0,assumed,enzyme product,not printed,assumed negligible P
+vitamin_trace_mineral_premix,0,assumed,premix,not printed,assumed negligible P

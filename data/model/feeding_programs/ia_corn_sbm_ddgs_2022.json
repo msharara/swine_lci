@@ -343,6 +343,15 @@
           "origin": "entered",
           "note": "calculated, as printed"
         },
+        "total_phosphorus": {
+          "value": 0.79759,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ingredient_phosphorus",
+          "quality_id": "q_comp_derived_p",
+          "origin": "derived",
+          "note": "computed: sum of inclusion x ingredient total P (bailey_2023_tas, feedipedia_ddgs, stoichiometry); source diet prints no total P"
+        },
         "net_energy": {
           "value": 2627.90704,
           "unit_id": "kcal_per_kg",
@@ -580,6 +589,15 @@
           "origin": "entered",
           "note": "calculated, as printed"
         },
+        "total_phosphorus": {
+          "value": 0.72064,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ingredient_phosphorus",
+          "quality_id": "q_comp_derived_p",
+          "origin": "derived",
+          "note": "computed: sum of inclusion x ingredient total P (bailey_2023_tas, feedipedia_ddgs, stoichiometry); source diet prints no total P"
+        },
         "net_energy": {
           "value": 2557.3592,
           "unit_id": "kcal_per_kg",
@@ -806,6 +824,15 @@
           "quality_id": "q_ext_guide",
           "origin": "entered",
           "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.54558,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ingredient_phosphorus",
+          "quality_id": "q_comp_derived_p",
+          "origin": "derived",
+          "note": "computed: sum of inclusion x ingredient total P (bailey_2023_tas, feedipedia_ddgs, stoichiometry); source diet prints no total P"
         },
         "net_energy": {
           "value": 2570.58692,

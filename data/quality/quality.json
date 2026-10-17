@@ -86,5 +86,38 @@
       "technological": 3
     },
     "distribution": "none"
+  },
+  {
+    "quality_id": "q_comp_analyzed",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 3,
+      "temporal": 1,
+      "geographic": 2,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_comp_table",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 2,
+      "temporal": 4,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_comp_derived_p",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
   }
 ]
