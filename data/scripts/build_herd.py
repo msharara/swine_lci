@@ -66,6 +66,21 @@ ad_gest = female_years * (gest_days_yr + open_days_yr)
 gilt_days = (float(pic["gilt_first_breeding_age_low"]["value"]) + float(pic["gilt_first_breeding_age_high"]["value"])) / 2 - wean_age
 gilt_wt = (float(pic["gilt_first_breeding_weight_low"]["value"]) + float(pic["gilt_first_breeding_weight_high"]["value"])) / 2
 gilts = female_years * replacement
+
+# feed intake, as-fed. Gestation: PIC base energy level / gestation diet ME
+# (KSU Swine Day 2024 control diet, 1481 kcal ME/lb). Lactation: PIC daily
+# intake curves integrated over wean age, weighted by parity-1 share of litters.
+GEST_DIET_ME = 1481 * 2.204622 / 1000  # Mcal/kg
+gest_me = float(pic["gestation_me_intake_base_light_gilts"]["value"]) if gilt_wt < 160 else float(pic["gestation_me_intake_base"]["value"])
+gest_intake = gest_me / GEST_DIET_ME
+def lact_curve(p):
+    c = [float(pic[f"lactation_intake_{p}_c{i}"]["value"]) for i in range(3)]
+    n = 1000; h = wean_age / n
+    return sum((c[0] + c[1] * (i + .5) * h + c[2] * ((i + .5) * h) ** 2) for i in range(n)) * h / 2.204622 / wean_age
+p1_share = min(1.0, replacement / litters)
+lact_intake = p1_share * lact_curve("p1") + (1 - p1_share) * lact_curve("p2")
+gilt_adg = (gilt_wt - n_in * LB) / gilt_days
+gilt_intake = f_fcr * gilt_adg
 culls = female_years * (replacement - sow_death)
 
 Q = {"q_mf_2022": dict(reliability=2, completeness=2, temporal=1, geographic=3, technological=1),
@@ -90,12 +105,16 @@ herd = {
   "stages": [
     {"stage": "gestation",
      "animal_days_per_unit": d(ad_gest, "animal_day", "per_functional_unit", f"female-years per pig x (litters x {gestation:g} d gestation + open days); open days = 365 - gestation - lactation"),
-     "mortality_rate": amt(sow_death, "fraction_per_year", "absolute", MF, "q_mf_2022", "Sow Death Loss, p.4; annual rate for the breeding herd")},
+     "mortality_rate": amt(sow_death, "fraction_per_year", "absolute", MF, "q_mf_2022", "Sow Death Loss, p.4; annual rate for the breeding herd"),
+     "feed_intake": d(gest_intake, "kg_per_day", "per_head_day", f"PIC base level {gest_me:g} Mcal ME/d (gilt breeding wt < 160 kg) / gestation diet ME {GEST_DIET_ME:.3f} Mcal/kg; also applied to open days")},
     {"stage": "farrowing_lactation",
-     "animal_days_per_unit": d(ad_lact, "animal_day", "per_functional_unit", "female-years per pig x litters x wean age (21.3 d)")},
+     "animal_days_per_unit": d(ad_lact, "animal_day", "per_functional_unit", "female-years per pig x litters x wean age (21.3 d)"),
+     "feed_intake": d(lact_intake, "kg_per_day", "per_head_day", f"PIC lactation ADFI curves (parity 1, parity 2+) averaged over 21.3 d, parity-1 share {p1_share:.2f} = replacement / litters")},
     {"stage": "gilt_development",
      "animal_days_per_unit": d(gilts * gilt_days, "animal_day", "per_functional_unit", "gilts per pig (female-years x replacement) x days from weaning to first breeding (PIC 200-225 d age midpoint minus wean age)"),
-     "body_weight_out": amt(gilt_wt, "kg", "per_head", PIC, "q_pic_2025", "midpoint of 135-160 kg first-breeding target")},
+     "body_weight_out": amt(gilt_wt, "kg", "per_head", PIC, "q_pic_2025", "midpoint of 135-160 kg first-breeding target"),
+     "average_daily_gain": d(gilt_adg, "kg_per_day", "per_head_day", "(first-breeding weight - wean weight) / days from weaning to breeding"),
+     "feed_intake": d(gilt_intake, "kg_per_day", "per_head_day", "finishing feed conversion 2.85 x gilt ADG; no open gilt intake source")},
     {"stage": "nursery",
      "animal_days_per_unit": d(ad_nursery, "animal_day", "per_functional_unit", "pigs placed per shipped pig x days on feed, deaths at mid-stage"),
      "body_weight_in": d(n_in * LB, "kg", "per_head", "weight out - ADG x days on feed"),
@@ -122,4 +141,4 @@ out.write_text(json.dumps(herd, indent=2) + "\n")
 (ROOT / "quality" / "herd_quality.json").write_text(json.dumps(quality, indent=2) + "\n")
 print(json.dumps({"litters": litters, "female_days_per_pig": female_years * 365, "gestation": ad_gest, "lactation": ad_lact,
                   "gilt": gilts * gilt_days, "nursery": ad_nursery, "finishing": ad_finish, "finish_days": f_days,
-                  "wean_kg": n_in * LB, "culls_per_pig": culls, "gilts_per_pig": gilts}, indent=1))
+                  "wean_kg": n_in * LB, "culls_per_pig": culls, "gilts_per_pig": gilts, "gest_kg_d": gest_intake, "lact_kg_d": lact_intake, "p1_share": p1_share, "gilt_kg_d": gilt_intake}, indent=1))

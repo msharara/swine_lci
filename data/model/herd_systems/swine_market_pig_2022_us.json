@@ -53,6 +53,15 @@
         "quality_id": "q_mf_2022",
         "origin": "entered",
         "note": "Sow Death Loss, p.4; annual rate for the breeding herd"
+      },
+      "feed_intake": {
+        "value": 1.807,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "PIC base level 5.9 Mcal ME/d (gilt breeding wt < 160 kg) / gestation diet ME 3.265 Mcal/kg; also applied to open days"
       }
     },
     {
@@ -65,6 +74,15 @@
         "quality_id": "q_derived",
         "origin": "derived",
         "note": "female-years per pig x litters x wean age (21.3 d)"
+      },
+      "feed_intake": {
+        "value": 5.2435,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "PIC lactation ADFI curves (parity 1, parity 2+) averaged over 21.3 d, parity-1 share 0.26 = replacement / litters"
       }
     },
     {
@@ -86,6 +104,24 @@
         "quality_id": "q_pic_2025",
         "origin": "entered",
         "note": "midpoint of 135-160 kg first-breeding target"
+      },
+      "average_daily_gain": {
+        "value": 0.7393,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "(first-breeding weight - wean weight) / days from weaning to breeding"
+      },
+      "feed_intake": {
+        "value": 2.107,
+        "unit_id": "kg_per_day",
+        "basis": "per_head_day",
+        "source_id": "derived_build_herd",
+        "quality_id": "q_derived",
+        "origin": "derived",
+        "note": "finishing feed conversion 2.85 x gilt ADG; no open gilt intake source"
       }
     },
     {
