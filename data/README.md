@@ -31,6 +31,9 @@ Recipes are published extension and public diets (Mahmoud's choice), picked per 
 
 Iowa is close. NC soybean meal is more than twice IFEEDER's share: the public KSU corn-SBM diets use more SBM than NC's actual mix, which leans on wheat, byproducts and synthetic amino acids.
 
+### NC State 2005 program (staged, not used)
+`staged/feed/ncsu_2005_program.csv` holds the NC State 2005 nursery-to-finish program (7 phases, with CP, total P, feed budget per pig and in-feed antibiotics), transcribed from the extension page's Table 2; every phase sums to 100%. It is the only NC-specific public diet found, but it predates the 2019-2025 window by 14 years, carries about 7% lard, and its soybean meal (12-34%) is as high as the KSU diets, so it does not fix the NC soybean meal gap. Role: sanity check.
+
 ### Known gaps
 - No public gilt development diet: market-pig grow-finish diets stand in (PIC says gilt Lys:energy follows market gilts).
 - No public early-gestation diet after 2015: the late-gestation control diet is used for all of gestation.
