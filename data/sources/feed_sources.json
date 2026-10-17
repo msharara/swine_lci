@@ -68,5 +68,65 @@
     "doi_or_url": "https://swine.ces.ncsu.edu/swinehusbandrytopics/nutrition/",
     "license": "public extension page",
     "raw_file": "table image https://eit-wagpress-prod.s3.amazonaws.com/media/images/2021-01-nhf-ncsu-060420-table2.max-1200x700.jpg"
+  },
+  {
+    "source_id": "bailey_2023_tas",
+    "citation": "Bailey HM, Campbell JM, Torres-Mendoza LJ, Fanelli NS, Stein HH. 2023. Inclusion of spray dried plasma in diets based on different ingredient combinations increases the digestibility of energy, fiber, Ca, and P by young pigs. Translational Animal Science 7:txad031. Table 3, analyzed ingredient composition (as-fed).",
+    "year": 2023,
+    "region_id": "US",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://doi.org/10.1093/tas/txad031",
+    "license": "CC BY 4.0"
+  },
+  {
+    "source_id": "feedipedia_ddgs",
+    "citation": "Feedipedia (INRAE, CIRAD, AFZ, FAO). Corn distillers grain: Maize distillers dried grains and solubles, nutritional table. Fallback where Bailey 2023 has no value.",
+    "year": 2014,
+    "region_id": "GLO",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://www.feedipedia.org/node/12282",
+    "license": "reuse of extracts for research, teaching and non-commercial use with credit to INRAE, CIRAD, AFZ and FAO"
+  },
+  {
+    "source_id": "kim_2012_whey",
+    "citation": "Kim BG, Lee JW, Stein HH. 2012. Energy concentration and phosphorus digestibility in whey powder, whey permeate, and low-ash whey permeate fed to weanling pigs. Journal of Animal Science 90:289-295. Table 1, analyzed composition (as-fed).",
+    "year": 2012,
+    "region_id": "US",
+    "kind": "literature",
+    "role": "primary_data",
+    "doi_or_url": "https://doi.org/10.2527/jas.2011-4145",
+    "license": "author copy openly posted by University of Illinois"
+  },
+  {
+    "source_id": "stoichiometry",
+    "citation": "Phosphorus mass fraction from chemical formula (P 30.974 g/mol). Zero for compounds without P.",
+    "year": 2026,
+    "region_id": "GLO",
+    "kind": "model",
+    "role": "primary_data",
+    "doi_or_url": "",
+    "license": "n/a"
+  },
+  {
+    "source_id": "assumed",
+    "citation": "Assumed negligible: vitamin and trace mineral premixes print no P content.",
+    "year": 2026,
+    "region_id": "GLO",
+    "kind": "expert_default",
+    "role": "primary_data",
+    "doi_or_url": "",
+    "license": "n/a"
+  },
+  {
+    "source_id": "ingredient_phosphorus",
+    "citation": "Diet total P computed in data/scripts/build_feed.py as the sum of inclusion x ingredient total P, using data/staged/feed/ingredient_phosphorus.csv (Bailey et al. 2023; Feedipedia DDGS; Kim et al. 2012 whey permeate; stoichiometry for minerals).",
+    "year": 2026,
+    "region_id": "US",
+    "kind": "model",
+    "role": "primary_data",
+    "doi_or_url": "data/staged/feed/ingredient_phosphorus.csv",
+    "license": "n/a"
   }
 ]

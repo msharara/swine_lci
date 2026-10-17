@@ -37,6 +37,27 @@ Recipes are published extension and public diets (Mahmoud's choice), picked per 
 
 Iowa is close. NC soybean meal is more than twice IFEEDER's share: the public KSU corn-SBM diets use more SBM than NC's actual mix, which leans on wheat, byproducts and synthetic amino acids.
 
+### Nursery total P (computed)
+Nursery diets print no total P, so `build_feed.py` computes it as the sum of inclusion x ingredient total P from `staged/feed/ingredient_phosphorus.csv` (origin `derived`). Ingredient values, as-fed:
+
+| Ingredient | Total P % | Source |
+|---|---|---|
+| Corn | 0.24 | Bailey et al. 2023, Table 3 (analyzed, CC BY) |
+| Soybean meal | 0.63 | Bailey et al. 2023 |
+| Spray-dried plasma | 1.58 | Bailey et al. 2023 |
+| Fish meal | 3.28 | Bailey et al. 2023 |
+| Whey powder | 0.95 | Bailey et al. 2023 |
+| Enzyme-treated SBM | 0.78 | Bailey et al. 2023, fermented SBM as proxy |
+| DDGS | 0.70 | Feedipedia (7.9 g/kg DM x 0.890 DM) |
+| Whey permeate | 0.57 | Kim et al. 2012, Table 1 (outside window; no newer open value) |
+| Monocalcium phosphate | 24.57 | Stoichiometry, Ca(H2PO4)2.H2O |
+| Limestone, salt, ZnO, CuSO4, amino acids, oils | 0 | No P |
+| Premixes, phytase | 0 | Assumed negligible |
+
+Result: nursery 1 0.80% (both states), nursery 2 0.67% NC / 0.72% IA, nursery 3 0.55% NC / 0.55% IA.
+
+Check against the six diets that do print total P: gestation +3%, lactation 0%, IA finishing 2 (30% DDGS) -9%, IA finishing 4 (15% DDGS) -3%. The DDGS diets run low, so DDGS P may be understated for today's reduced-oil DDGS. Phases on the MF-2301 fallback keep it; the computed value is used only where no printed or band value exists.
+
 ### NC State 2005 program (staged, not used)
 `staged/feed/ncsu_2005_program.csv` holds the NC State 2005 nursery-to-finish program (7 phases, with CP, total P, feed budget per pig and in-feed antibiotics), transcribed from the extension page's Table 2; every phase sums to 100%. It is the only NC-specific public diet found, but it predates the 2019-2025 window by 14 years, carries about 7% lard, and its soybean meal (12-34%) is as high as the KSU diets, so it does not fix the NC soybean meal gap. Role: sanity check.
 
@@ -44,6 +65,5 @@ Iowa is close. NC soybean meal is more than twice IFEEDER's share: the public KS
 - No public gilt development diet: market-pig grow-finish diets stand in (PIC says gilt Lys:energy follows market gilts).
 - No public early-gestation diet after 2015: the late-gestation control diet is used for all of gestation.
 - No NC or Southeast public diets; all recent diets are from Kansas State. Grow-finish diets are research treatments (the Low SBM arm, closest to practice), not recommendations.
-- Nursery diets print no total P and MF-2301 has no nursery band, so nursery total P is empty.
-- Sow and gilt daily feed intake are not yet in the herd record.
+- Nursery total P is computed, not printed (see above); enzyme-treated SBM uses fermented SBM as a proxy.
 - Licensing: KSU material is free for educational use, all other rights reserved (not Creative Commons).
