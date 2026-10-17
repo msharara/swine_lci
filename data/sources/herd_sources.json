@@ -1,0 +1,11 @@
+[
+  {"source_id": "metafarms_2024_npb", "citation": "MetaFarms. 2025. 2024 Production Analysis (2020-2024 trends). National Pork Board.", "year": 2025, "region_id": "US", "kind": "survey_statistic", "role": "primary_data",
+   "doi_or_url": "https://porkcheckoff.org/wp-content/uploads/2025/10/MetaFarms-2024-Production-Analysis-NPB-Final.pdf", "license": "public (Pork Checkoff)", "raw_file": "not stored: host blocked for direct download; values transcribed through a web reader, verify against the PDF"},
+  {"source_id": "nass_lsan0423", "citation": "USDA NASS. 2023. Livestock Slaughter 2022 Summary (April 2023).", "year": 2023, "region_id": "US", "kind": "survey_statistic", "role": "primary_data",
+   "doi_or_url": "https://esmis.nal.usda.gov/sites/default/release-files/r207tp32d/8p58qs65g/5m60s565v/lsan0423.txt", "license": "public domain (US government)", "raw_file": "not stored: host blocked for direct download"},
+  {"source_id": "nass_hgpg1222", "citation": "USDA NASS. 2022. Quarterly Hogs and Pigs (December 23, 2022).", "year": 2022, "region_id": "US", "kind": "survey_statistic", "role": "sanity_check",
+   "doi_or_url": "https://esmis.nal.usda.gov/sites/default/release-files/rj430453j/37721p56r/pv63h964f/hgpg1222.txt", "license": "public domain (US government)", "raw_file": "not stored: host blocked for direct download"},
+  {"source_id": "pic_nutrition_2025", "citation": "PIC. 2025. PIC Nutrition and Feeding Guidelines, Metric, version 2025.07.21.", "year": 2025, "region_id": "US", "kind": "literature", "role": "primary_data",
+   "doi_or_url": "https://www.pic.com", "license": "publicly distributed by PIC", "raw_file": "project-files reference/PIC_Nutrition_Feeding_Guidelines_Metric_2025.pdf"},
+  {"source_id": "derived_build_herd", "citation": "Derived by data/scripts/build_herd.py from the staged tables in data/staged/herd.", "year": 2026, "kind": "model", "role": "primary_data"}
+]

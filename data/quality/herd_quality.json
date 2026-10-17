@@ -1,0 +1,57 @@
+[
+  {
+    "quality_id": "q_mf_2022",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 2,
+      "temporal": 1,
+      "geographic": 3,
+      "technological": 1
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_mf_2024",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 1
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_nass_2022",
+    "pedigree": {
+      "reliability": 1,
+      "completeness": 1,
+      "temporal": 1,
+      "geographic": 3,
+      "technological": 1
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_pic_2025",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 1
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_derived",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 2,
+      "temporal": 1,
+      "geographic": 3,
+      "technological": 1
+    },
+    "distribution": "none"
+  }
+]
