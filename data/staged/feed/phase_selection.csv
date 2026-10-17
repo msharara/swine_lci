@@ -1,0 +1,27 @@
+program,stage,phase_id,source_id,phase_label,bw_from_kg,bw_to_kg,total_p_fallback_label,note
+nc_corn_sbm_2022,gestation,gestation,KSU_SD2024_SOW,"Late gestation, low Lys (0.60% SID Lys; control)",,,,"no public early-gestation diet after 2015; control diet used for all of gestation"
+nc_corn_sbm_2022,farrowing_lactation,lactation,KSU_SD2024_SOW,Common lactation diet,,,,
+nc_corn_sbm_2022,nursery,nursery_1,KSU_NURS_2019,KSU Phase 1 option 1,6.14,6.80,,"starts at herd wean weight"
+nc_corn_sbm_2022,nursery,nursery_2,KSU_NURS_2019,KSU Phase 2 option 6,6.80,11.34,,"only Phase 2 option without DDGS"
+nc_corn_sbm_2022,nursery,nursery_3,KSU_NURS_2019,KSU Phase 3 option 1 (corn-SBM (0% DDGS)),11.34,23.07,,"ends at herd nursery weight out"
+nc_corn_sbm_2022,finishing,finishing_1,KSU_SD2024_GF,"Phase 1 corn-SBM, Low SBM treatment",23.07,47.63,"Finishing, no added fat, 75-120 lb","Low SBM = closest to commercial practice"
+nc_corn_sbm_2022,finishing,finishing_2,KSU_SD2024_GF,"Phase 2 corn-SBM, Low SBM treatment",47.63,72.57,"Finishing, no added fat, 120-160 lb",
+nc_corn_sbm_2022,finishing,finishing_3,KSU_SD2024_GF,"Phase 3 corn-SBM, Low SBM treatment",72.57,97.52,"Finishing, no added fat, 160-195 lb",
+nc_corn_sbm_2022,finishing,finishing_4,KSU_SD2024_GF,"Phase 4 corn-SBM, Low SBM treatment",97.52,131.09,"Finishing, no added fat, 230-280 lb","ends at NASS market weight"
+nc_corn_sbm_2022,gilt_development,gilt_1,KSU_SD2024_GF,"Phase 1 corn-SBM, Low SBM treatment",6.14,47.63,"Finishing, no added fat, 75-120 lb","no public gilt diet; market-pig diets stand in (PIC: gilt Lys:energy follows market gilts)"
+nc_corn_sbm_2022,gilt_development,gilt_2,KSU_SD2024_GF,"Phase 2 corn-SBM, Low SBM treatment",47.63,72.57,"Finishing, no added fat, 120-160 lb",
+nc_corn_sbm_2022,gilt_development,gilt_3,KSU_SD2024_GF,"Phase 3 corn-SBM, Low SBM treatment",72.57,97.52,"Finishing, no added fat, 160-195 lb",
+nc_corn_sbm_2022,gilt_development,gilt_4,KSU_SD2024_GF,"Phase 4 corn-SBM, Low SBM treatment",97.52,147.5,"Finishing, no added fat, 230-280 lb","to PIC first-breeding weight midpoint"
+ia_corn_sbm_ddgs_2022,gestation,gestation,KSU_SD2024_SOW,"Late gestation, low Lys (0.60% SID Lys; control)",,,,"as NC"
+ia_corn_sbm_ddgs_2022,farrowing_lactation,lactation,KSU_SD2024_SOW,Common lactation diet,,,,
+ia_corn_sbm_ddgs_2022,nursery,nursery_1,KSU_NURS_2019,KSU Phase 1 option 1,6.14,6.80,,
+ia_corn_sbm_ddgs_2022,nursery,nursery_2,KSU_NURS_2019,KSU Phase 2 option 1,6.80,11.34,,10% DDGS
+ia_corn_sbm_ddgs_2022,nursery,nursery_3,KSU_NURS_2019,KSU Phase 3 option 2 (10% DDGS),11.34,23.07,,
+ia_corn_sbm_ddgs_2022,finishing,finishing_1,KSU_SD2024_GF,"Phase 1 corn-SBM, Low SBM treatment",23.07,34.02,"Finishing, no added fat, 50-75 lb","no public DDGS diet below 34 kg"
+ia_corn_sbm_ddgs_2022,finishing,finishing_2,KSU_SD2025_DDGS,"Early finishing, 30% DDGS, 12.8% SBM treatment",34.02,58.97,,"Iowa-sourced DDGS; second-lowest SBM level"
+ia_corn_sbm_ddgs_2022,finishing,finishing_3,KSU_SD2024_GF,"Phase 3 corn-SBM, Low SBM treatment",58.97,79.38,"Finishing, no added fat, 160-195 lb","no public DDGS diet for 59-79 kg"
+ia_corn_sbm_ddgs_2022,finishing,finishing_4,KSU_SD2025_DDGS,"Late finishing, 15% DDGS, 6.4% SBM treatment",79.38,131.09,,
+ia_corn_sbm_ddgs_2022,gilt_development,gilt_1,KSU_SD2024_GF,"Phase 1 corn-SBM, Low SBM treatment",6.14,47.63,"Finishing, no added fat, 75-120 lb","as NC"
+ia_corn_sbm_ddgs_2022,gilt_development,gilt_2,KSU_SD2024_GF,"Phase 2 corn-SBM, Low SBM treatment",47.63,72.57,"Finishing, no added fat, 120-160 lb",
+ia_corn_sbm_ddgs_2022,gilt_development,gilt_3,KSU_SD2024_GF,"Phase 3 corn-SBM, Low SBM treatment",72.57,97.52,"Finishing, no added fat, 160-195 lb",
+ia_corn_sbm_ddgs_2022,gilt_development,gilt_4,KSU_SD2024_GF,"Phase 4 corn-SBM, Low SBM treatment",97.52,147.5,"Finishing, no added fat, 230-280 lb",

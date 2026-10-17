@@ -2,7 +2,7 @@
 
 Reads data/staged/herd/*.csv, converts to SI, derives animal-days per shipped
 pig (decision C), and writes data/model/herd_systems/swine_market_pig_2022.json
-plus data/quality/herd_quality.json. Every derived value carries origin
+plus its pedigree records in data/quality/quality.json (merged by id). Every derived value carries origin
 "derived" and a note with its formula.
 """
 import csv, json, pathlib
@@ -119,7 +119,9 @@ herd = {
 }
 out = ROOT / "model" / "herd_systems" / "swine_market_pig_2022_us.json"
 out.write_text(json.dumps(herd, indent=2) + "\n")
-(ROOT / "quality" / "herd_quality.json").write_text(json.dumps(quality, indent=2) + "\n")
+qf = ROOT / "quality" / "quality.json"
+kept = [q for q in json.loads(qf.read_text()) if q["quality_id"] not in Q] if qf.exists() else []
+qf.write_text(json.dumps(quality + kept, indent=2) + "\n")
 print(json.dumps({"litters": litters, "female_days_per_pig": female_years * 365, "gestation": ad_gest, "lactation": ad_lact,
                   "gilt": gilts * gilt_days, "nursery": ad_nursery, "finishing": ad_finish, "finish_days": f_days,
                   "wean_kg": n_in * LB, "culls_per_pig": culls, "gilts_per_pig": gilts}, indent=1))

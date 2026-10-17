@@ -1,0 +1,2692 @@
+{
+  "feeding_program_id": "ia_corn_sbm_ddgs_2022",
+  "region_id": "IA",
+  "phases": [
+    {
+      "phase_id": "gestation",
+      "stage": "gestation",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 13.6,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.6,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2548.54072,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.6,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.823,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.14,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0135,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0115,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": "lactation",
+      "stage": "farrowing_lactation",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 19.3,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.62,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2614.67932,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.1,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_sow",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.6595,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.2815,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_oil",
+          "inclusion": {
+            "value": 0.02,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0125,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0115,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0011,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0008,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_sow",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": "nursery_1",
+      "stage": "nursery",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 21.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2627.90704,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.40891,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "whey",
+          "inclusion": {
+            "value": 0.25782,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.17841,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "ddgs",
+          "inclusion": {
+            "value": 0.05156,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "spray_dried_plasma",
+          "inclusion": {
+            "value": 0.04125,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "fish_meal",
+          "inclusion": {
+            "value": 0.03094,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0067,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.00567,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "zinc_oxide",
+          "inclusion": {
+            "value": 0.00402,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.00361,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.00309,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.00258,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.00155,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.00155,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.00134,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.00072,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.00026,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 6.14,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 6.8,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "nursery_2",
+      "stage": "nursery",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 21.9,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2557.3592,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.35,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.47128,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.23461,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "ddgs",
+          "inclusion": {
+            "value": 0.10312,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "whey",
+          "inclusion": {
+            "value": 0.10312,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "enzyme_treated_soybean_meal",
+          "inclusion": {
+            "value": 0.04641,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.01031,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.00877,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.00567,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.00516,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.00258,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "zinc_oxide",
+          "inclusion": {
+            "value": 0.00258,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.00186,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.00175,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.00155,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.00082,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.00041,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 6.8,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered",
+        "note": "10% DDGS"
+      },
+      "body_weight_to": {
+        "value": 11.34,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "nursery_3",
+      "stage": "nursery",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 20.7,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2570.58692,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.3,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_nursery_diets_2019",
+          "quality_id": "q_ext_guide",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.59603,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.26295,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "ddgs",
+          "inclusion": {
+            "value": 0.10312,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.00825,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0067,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.00619,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.00619,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.00258,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.00227,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0018,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.00155,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.00129,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.00057,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "copper_sulfate",
+          "inclusion": {
+            "value": 0.00052,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_nursery_diets_2019",
+            "quality_id": "q_ext_guide",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 11.34,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 23.07,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_nursery_diets_2019",
+        "quality_id": "q_ext_guide",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "finishing_1",
+      "stage": "finishing",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 19.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.52,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 50-75 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2451.53744,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.1,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 86.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.69369,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.27502,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0098,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0065,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0018,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0013,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 23.07,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered",
+        "note": "no public DDGS diet below 34 kg"
+      },
+      "body_weight_to": {
+        "value": 34.02,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "finishing_2",
+      "stage": "finishing",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 19.38,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.49,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2524.2899,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.98,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.53754,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "ddgs",
+          "inclusion": {
+            "value": 0.30069,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.1287,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.01453,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.00531,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.00351,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "beef_tallow",
+          "inclusion": {
+            "value": 0.00251,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0014,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0008,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_isoleucine",
+          "inclusion": {
+            "value": 0.0008,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0008,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0006,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "copper_chloride",
+          "inclusion": {
+            "value": 0.0003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.0003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0002,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 34.02,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2025_ddgs",
+        "quality_id": "q_ext_research",
+        "origin": "entered",
+        "note": "Iowa-sourced DDGS; second-lowest SBM level"
+      },
+      "body_weight_to": {
+        "value": 58.97,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2025_ddgs",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "finishing_3",
+      "stage": "finishing",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 15.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.42,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 160-195 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2526.49452,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.85,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 85.7,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.80274,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.17267,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0088,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0014,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0007,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 58.97,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered",
+        "note": "no public DDGS diet for 59-79 kg"
+      },
+      "body_weight_to": {
+        "value": 79.38,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "finishing_4",
+      "stage": "finishing",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 13.42,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.36,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "net_energy": {
+          "value": 2594.83774,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.66,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2025_ddgs",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.75897,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "ddgs",
+          "inclusion": {
+            "value": 0.15039,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.06417,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.01113,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.00381,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_lysine_hcl",
+          "inclusion": {
+            "value": 0.00381,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "beef_tallow",
+          "inclusion": {
+            "value": 0.00251,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0011,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0008,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_isoleucine",
+          "inclusion": {
+            "value": 0.0007,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0006,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0006,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "copper_chloride",
+          "inclusion": {
+            "value": 0.0003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_premix",
+          "inclusion": {
+            "value": 0.0002,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2025_ddgs",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 79.38,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2025_ddgs",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 131.09,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2025_ddgs",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "gilt_1",
+      "stage": "gilt_development",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 19.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.47,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 75-120 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2451.53744,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 1.1,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 86.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.69369,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.27502,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0098,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0065,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0018,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0013,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 6.14,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered",
+        "note": "as NC"
+      },
+      "body_weight_to": {
+        "value": 47.63,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "gilt_2",
+      "stage": "gilt_development",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 17.0,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.44,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 120-160 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2493.42522,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.95,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 85.9,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.75785,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.21366,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0092,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0016,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.001,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0009,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 47.63,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 72.57,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "gilt_3",
+      "stage": "gilt_development",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 15.4,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.42,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 160-195 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2526.49452,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.85,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 85.7,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.80274,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.17267,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0088,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0025,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0014,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0007,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0003,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 72.57,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 97.52,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    },
+    {
+      "phase_id": "gilt_4",
+      "stage": "gilt_development",
+      "diet_spec": {
+        "crude_protein": {
+          "value": 13.7,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "calculated, as printed"
+        },
+        "total_phosphorus": {
+          "value": 0.42,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_mf2301_2007",
+          "quality_id": "q_ext_old",
+          "origin": "entered",
+          "note": "fallback: MF-2301 band 'Finishing, no added fat, 230-280 lb'; source diet prints no total P"
+        },
+        "net_energy": {
+          "value": 2550.74534,
+          "unit_id": "kcal_per_kg",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered",
+          "note": "converted from kcal/lb"
+        },
+        "sid_lysine": {
+          "value": 0.75,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        },
+        "dry_matter": {
+          "value": 86.3,
+          "unit_id": "percent",
+          "basis": "as_fed",
+          "source_id": "ksu_swineday_2024_gf",
+          "quality_id": "q_ext_research",
+          "origin": "entered"
+        }
+      },
+      "recipe": [
+        {
+          "flow_id": "corn",
+          "inclusion": {
+            "value": 0.84492,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "soybean_meal",
+          "inclusion": {
+            "value": 0.13179,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "limestone",
+          "inclusion": {
+            "value": 0.0082,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "salt",
+          "inclusion": {
+            "value": 0.005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "liquid_lysine_55",
+          "inclusion": {
+            "value": 0.0045,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "monocalcium_phosphate",
+          "inclusion": {
+            "value": 0.0023,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_threonine",
+          "inclusion": {
+            "value": 0.0013,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "vitamin_trace_mineral_premix",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "phytase",
+          "inclusion": {
+            "value": 0.0005,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "dl_methionine",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_tryptophan",
+          "inclusion": {
+            "value": 0.0004,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        },
+        {
+          "flow_id": "l_valine",
+          "inclusion": {
+            "value": 0.0002,
+            "unit_id": "fraction",
+            "basis": "as_fed",
+            "source_id": "ksu_swineday_2024_gf",
+            "quality_id": "q_ext_research",
+            "origin": "entered"
+          }
+        }
+      ],
+      "body_weight_from": {
+        "value": 97.52,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      },
+      "body_weight_to": {
+        "value": 147.5,
+        "unit_id": "kg",
+        "basis": "per_head",
+        "source_id": "ksu_swineday_2024_gf",
+        "quality_id": "q_ext_research",
+        "origin": "entered"
+      }
+    }
+  ]
+}

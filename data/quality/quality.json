@@ -53,5 +53,38 @@
       "technological": 1
     },
     "distribution": "none"
+  },
+  {
+    "quality_id": "q_ext_research",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_ext_guide",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_ext_old",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 5,
+      "geographic": 3,
+      "technological": 3
+    },
+    "distribution": "none"
   }
 ]
