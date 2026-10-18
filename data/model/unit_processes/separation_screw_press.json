@@ -1,0 +1,32 @@
+{
+  "process_id": "separation_screw_press",
+  "name": "Solid-liquid separation, screw press, per t manure in",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "manure_to_separator",
+    "amount": {
+      "value": 1,
+      "unit_id": "t",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "electricity",
+      "direction": "input",
+      "amount": {
+        "value": 0.8,
+        "unit_id": "kWh",
+        "basis": "absolute",
+        "source_id": "lyons_2021_separation",
+        "quality_id": "q_storage_ipcc2019",
+        "origin": "derived",
+        "note": "range 0.4-1.2 kWh per tonne"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

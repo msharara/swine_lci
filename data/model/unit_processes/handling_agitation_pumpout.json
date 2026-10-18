@@ -1,0 +1,32 @@
+{
+  "process_id": "handling_agitation_pumpout",
+  "name": "Agitation and pump-out of liquid manure or lagoon sludge by tractor PTO pump, per m3 removed",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "manure_removed",
+    "amount": {
+      "value": 1,
+      "unit_id": "m3",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "diesel_energy",
+      "direction": "input",
+      "amount": {
+        "value": 0.96,
+        "unit_id": "MJ",
+        "basis": "absolute",
+        "source_id": "msu_e1762_1984",
+        "quality_id": "q_storage_awmfh",
+        "origin": "derived",
+        "note": "shaft 0.1 kWh/m3 / engine efficiency 0.375; sources: msu_e1762_1984, omafra_2014_removal"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

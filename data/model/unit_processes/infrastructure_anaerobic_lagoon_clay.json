@@ -1,0 +1,45 @@
+{
+  "process_id": "infrastructure_anaerobic_lagoon_clay",
+  "name": "Earthen anaerobic lagoon with compacted clay liner; per m3 of capacity per year",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "storage_capacity_year",
+    "amount": {
+      "value": 1,
+      "unit_id": "m3_year",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "earthwork_excavation",
+      "direction": "input",
+      "amount": {
+        "value": 0.046667,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "ncsu_are_2005_b1",
+        "quality_id": "q_storage_design",
+        "origin": "derived",
+        "note": "spread over 15 yr; sources: ncsu_are_2005_b1, nrcs_practice_lifespan"
+      }
+    },
+    {
+      "flow_id": "compacted_clay_liner",
+      "direction": "input",
+      "amount": {
+        "value": 0.0116,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "ncsu_are_2005_b1",
+        "quality_id": "q_storage_design",
+        "origin": "derived",
+        "note": "spread over 15 yr; sources: ncsu_are_2005_b1, nrcs_practice_lifespan"
+      }
+    }
+  ],
+  "system_layer": "direct_supply"
+}

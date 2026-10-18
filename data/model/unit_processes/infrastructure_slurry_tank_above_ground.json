@@ -1,0 +1,32 @@
+{
+  "process_id": "infrastructure_slurry_tank_above_ground",
+  "name": "Above-ground glass-fused steel slurry tank; per m3 of capacity per year",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "storage_capacity_year",
+    "amount": {
+      "value": 1,
+      "unit_id": "m3_year",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "steel_glass_fused_plate",
+      "direction": "input",
+      "amount": {
+        "value": 0.4,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "missouri_eq304_tank",
+        "quality_id": "q_storage_design",
+        "origin": "derived",
+        "note": "floor slab not included (gap); spread over 15 yr; sources: missouri_eq304_tank, nrcs_practice_lifespan"
+      }
+    }
+  ],
+  "system_layer": "direct_supply"
+}
