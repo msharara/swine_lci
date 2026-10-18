@@ -1,0 +1,83 @@
+{
+  "process_id": "excretion_d384_nc_corn_sbm_2022_nursery",
+  "name": "As-excreted manure, nursery, nc_corn_sbm_2022 diets (ASAE D384.2)",
+  "region_id": "NC",
+  "reference": {
+    "flow_id": "swine_nursery_animal_day",
+    "amount": {
+      "value": 1,
+      "unit_id": "animal_day",
+      "basis": "per_head_day",
+      "source_id": "asabe_d384_2",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "manure_nitrogen_as_excreted",
+      "direction": "output",
+      "amount": {
+        "value": 0.00607,
+        "unit_id": "kg",
+        "basis": "per_head_day",
+        "source_id": "asabe_d384_2",
+        "quality_id": "q_d384",
+        "origin": "derived",
+        "note": "D384.2 N intake - N retention; diet CP 20.51%, intake 0.609 kg/d, 43.9 d"
+      }
+    },
+    {
+      "flow_id": "manure_phosphorus_as_excreted",
+      "direction": "output",
+      "amount": {
+        "value": 0.00177,
+        "unit_id": "kg",
+        "basis": "per_head_day",
+        "source_id": "asabe_d384_2",
+        "quality_id": "q_d384",
+        "origin": "derived",
+        "note": "D384.2 P intake - P retention; diet total P 0.591%"
+      }
+    },
+    {
+      "flow_id": "manure_dry_matter_as_excreted",
+      "direction": "output",
+      "amount": {
+        "value": 0.107219,
+        "unit_id": "kg",
+        "basis": "per_head_day",
+        "source_id": "asabe_d384_2",
+        "quality_id": "q_d384",
+        "origin": "derived",
+        "note": "D384.2 DM excretion, DMD 80%, diet DM 88%; feces only per standard"
+      }
+    },
+    {
+      "flow_id": "manure_volatile_solids_as_excreted",
+      "direction": "output",
+      "amount": {
+        "value": 0.093281,
+        "unit_id": "kg",
+        "basis": "per_head_day",
+        "source_id": "asabe_d384_2_table1",
+        "quality_id": "q_d384_typical",
+        "origin": "derived",
+        "note": "DM x VS/TS 0.870 from D384.2 typical values (nursery); standard has no swine VS equation"
+      }
+    },
+    {
+      "flow_id": "manure_potassium_as_excreted",
+      "direction": "output",
+      "amount": {
+        "value": 0.00441,
+        "unit_id": "kg",
+        "basis": "per_head_day",
+        "source_id": "asabe_d384_2_table1",
+        "quality_id": "q_d384_typical",
+        "origin": "entered",
+        "note": "D384.2 typical value (nursery); standard has no swine K equation"
+      }
+    }
+  ]
+}

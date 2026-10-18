@@ -1,0 +1,42 @@
+[
+  {
+    "source_id": "asabe_d384_2",
+    "citation": "ASABE. 2005 (R2024). ASAE D384.2 MAR2005: Manure Production and Characteristics. Section 9, as-excreted manure equations for swine (9.3 grow-finish, 9.4 weanling, 9.5 gestating sow, 9.6 lactating sow) and Tables 15-18 defaults. Equations implemented in data/scripts/build_excretion.py; standard text is not reproduced in this repository.",
+    "year": 2005,
+    "region_id": "US",
+    "kind": "standard",
+    "role": "primary_data",
+    "doi_or_url": "https://elibrary.asabe.org/standards.asp",
+    "license": "copyrighted ASABE standard; used as a method by project exception (Mahmoud 2026-10-18)"
+  },
+  {
+    "source_id": "asabe_d384_2_table1",
+    "citation": "ASAE D384.2 Tables 1-2, typical as-excreted swine manure values (nursery, grow-finish per finished animal; gestating and lactating sow per animal-day), as reproduced by the Livestock and Poultry Environmental Learning Community. Used for K and VS/TS (no swine equations) and as a sanity check.",
+    "year": 2005,
+    "region_id": "US",
+    "kind": "standard",
+    "role": "primary_data",
+    "doi_or_url": "https://lpelc.org/wp-content/uploads/2019/03/Manure_production_table_1.pdf",
+    "license": "publicly posted reproduction"
+  },
+  {
+    "source_id": "assumed_d384",
+    "citation": "Project assumption where no open 2022 value was found: fat-free lean 53% at market weight, born-alive piglet birth weight 1.4 kg. Flagged for replacement.",
+    "year": 2026,
+    "region_id": "US",
+    "kind": "expert_default",
+    "role": "primary_data",
+    "doi_or_url": "",
+    "license": "n/a"
+  },
+  {
+    "source_id": "ipcc_2006_v4_ch10",
+    "citation": "IPCC. 2006. Guidelines for National Greenhouse Gas Inventories, Vol. 4 Ch. 10, Tier 2 N excretion: N excreted = N intake x (1 - N retention fraction), swine retention fraction 0.30 (Table 10.20). Sanity check only.",
+    "year": 2006,
+    "region_id": "GLO",
+    "kind": "standard",
+    "role": "sanity_check",
+    "doi_or_url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol4.html",
+    "license": "freely available"
+  }
+]

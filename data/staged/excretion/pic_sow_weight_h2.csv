@@ -1,0 +1,7 @@
+parity,intercept,a,b,source_id,note
+P0,156.330078,0.072676,0.004348,pic_nutrition_2025,"Table H2 p.51: maternal weight kg = intercept + a*day + b*day^2"
+P1,186.503595,0.031931,0.003519,pic_nutrition_2025,
+P2,215.217902,0.023887,0.003389,pic_nutrition_2025,
+P3,225.690852,-0.028135,0.002636,pic_nutrition_2025,
+P4,225.951249,0.025689,0.002300,pic_nutrition_2025,
+P5+,237.868392,0.022266,0.001967,pic_nutrition_2025,

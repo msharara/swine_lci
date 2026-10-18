@@ -67,3 +67,35 @@ Check against the six diets that do print total P: gestation +3%, lactation 0%, 
 - No NC or Southeast public diets; all recent diets are from Kansas State. Grow-finish diets are research treatments (the Low SBM arm, closest to practice), not recommendations.
 - Nursery total P is computed, not printed (see above); enzyme-treated SBM uses fermented SBM as a proxy.
 - Licensing: KSU material is free for educational use, all other rights reserved (not Creative Commons).
+
+## Excretion (ASAE D384.2, swine)
+
+`scripts/build_excretion.py` writes one unit process per feeding program and herd stage to `model/unit_processes/excretion_d384_<program>_<stage>.json`, with as-excreted N, P, dry matter, volatile solids and K per animal-day of the stage. D384.2 is used by project exception to the open-data rule: the code implements its Section 9 equations (intake minus retention) and cites the standard; its text is not in this repository.
+
+How it runs: each stage is run once with its own intake, days and body weights from the herd record. The diet is the intake-weighted mean of the stage's feeding phases, using each phase's share of weight gain. Gilt development uses the grow-finish equations. D384.2 has no swine K or VS equations, so K and the VS/TS ratio come from its typical-value tables.
+
+Inputs not in the herd or feed records (`staged/excretion/`):
+- From D384.2: dry matter digestibility 80% (nursery) and 82% (others), diet DM 88% where not printed, lean gain 350 g/d ("high" capacity), gestation lean gain 19.2 kg, lactation lean change -4.2 kg, lactation sow weight change -13 kg.
+- From PIC 2025: carcass yield 74%, gestation 114 d, and sow weights from Table H2 (mean of parity curves: 207.9 kg at breeding, 250.1 kg at day 114).
+- Assumed, to replace: fat-free lean 53% at market weight, piglet birth weight 1.4 kg.
+
+### Result per shipped pig (kg)
+| | N | P | Dry matter | VS | K |
+|---|---|---|---|---|---|
+| NC corn-SBM | 6.54 | 1.13 | 73.3 | 61.1 | 2.80 |
+| IA corn-SBM-DDGS | 6.37 | 1.08 | 74.0 | 61.7 | 2.80 |
+
+Finishing carries about 83% of N and 75% of P.
+
+### Checks
+| Check | NC N | IA N | P (both) | Dry matter |
+|---|---|---|---|---|
+| IPCC 2006 Tier 2 (70% of N intake excreted) | 7.19 (model -9%) | 7.07 (-10%) | | |
+| D384.2 typical values x animal-days | 6.11 (+7%) | 6.11 (+4%) | 1.11 (+2% NC, -3% IA) | 74.5 (-2% NC, -1% IA) |
+
+Nursery N is about half the typical value because the nursery runs to 23 kg and retention uses the "high" lean gain; the standard's own reference diet reproduces with the "moderate" value. Nursery, gestation and lactation dry matter is feces only, as the standard defines it, so it sits below the typical values that include urine.
+
+### Known gaps
+- Fat-free lean % and piglet birth weight are assumptions.
+- Boars have no D384.2 equation and are not yet in the herd record.
+- Diet DM is not printed for most diets; 88% is used.

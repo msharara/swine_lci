@@ -1,0 +1,5 @@
+class,basis,days,N_lb,P_lb,K_lb,TS_lb,VS_lb,source_id,note
+nursery,per_finished_animal,36,0.91,0.15,0.35,10,8.7,asabe_d384_2_table1,"27.5 lb avg; D384.2 Table 1 as reproduced by LPELC"
+grow_finish,per_finished_animal,120,10,1.7,4.4,120,99,asabe_d384_2_table1,"154 lb avg"
+gestating_sow,per_animal_day,1,0.071,0.020,0.048,1.1,0.99,asabe_d384_2_table1,"440 lb; D384.2 Table 2"
+lactating_sow,per_animal_day,1,0.19,0.055,0.12,2.5,2.3,asabe_d384_2_table1,"423 lb; includes nursing pigs"
