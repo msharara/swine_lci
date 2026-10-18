@@ -284,16 +284,22 @@
       "type": "object",
       "description": "how this stream leaves custody at the farm",
       "required": [
-        "fate"
+        "fate",
+        "share"
       ],
       "properties": {
+        "share": {
+          "$ref": "#/$defs/amount",
+          "description": "fraction of this stream taking this exit; shares across a branch's exits sum to 1"
+        },
         "fate": {
           "type": "string",
           "enum": [
             "land_applied",
+            "kept_on_site",
             "exported_off_site"
           ],
-          "description": "land_applied continues to land pools via production_systems.manure_application; exported_off_site leaves the farm"
+          "description": "land_applied continues to land pools via production_systems.manure_application; kept_on_site stays on the farm for another use (e.g. bedding, on-farm compost use) and is reported, not land-applied; exported_off_site leaves the farm"
         },
         "use": {
           "type": "string",
@@ -334,15 +340,20 @@
     "branch": {
       "type": "object",
       "required": [
-        "exit"
+        "exits"
       ],
       "properties": {
         "steps": {
           "type": "array",
           "description": "in order of flow; may be empty when the stream exits directly"
         },
-        "exit": {
-          "$ref": "#/$defs/exit"
+        "exits": {
+          "type": "array",
+          "minItems": 1,
+          "description": "one or more exits with shares summing to 1; e.g. 0.7 exported weekly for gasification and 0.3 composted and land-applied on the farm",
+          "items": {
+            "$ref": "#/$defs/exit"
+          }
         }
       }
     }

@@ -69,11 +69,12 @@ Production system
 
 | `external_steps[].type` = `solid_liquid_separator` | optional | Splits manure into a solid and a liquid fraction; must be the last external step |
 | `partition` | separator | Share of mass, total solids, VS, N, P and K sent to the solid fraction |
-| `solid_fraction` / `liquid_fraction` | separator | Each has its own `steps[]` (solid: solid_storage, composting; liquid: the tank, digester and lagoon types) and an `exit` |
-| `exit.fate` | separator | `land_applied` (goes on to land pools) or `exported_off_site` |
-| `exit.use` | if exported | fuel_pyrolysis, fuel_gasification, composting_feedstock |
-| `exit.removal_interval_days` | no | Days between removals, e.g. 7 for weekly hauling; sets on-site holding time |
-| `exit.transport_link_id` | if exported | Farm to off-site processor |
+| `solid_fraction` / `liquid_fraction` | separator | Each has its own `steps[]` (solid: solid_storage, composting; liquid: the tank, digester and lagoon types) and one or more `exits[]` with shares summing to 1 |
+| `exits[].share` | separator | Share of the stream taking this exit, so part can leave and part stay |
+| `exits[].fate` | separator | `land_applied` (goes on to land pools), `kept_on_site` (other on-farm use, reported) or `exported_off_site` |
+| `exits[].use` | if exported | fuel_pyrolysis, fuel_gasification, composting_feedstock |
+| `exits[].removal_interval_days` | no | Days between removals, e.g. 7 for weekly hauling; sets on-site holding time |
+| `exits[].transport_link_id` | if exported | Farm to off-site processor |
 
 Rules the schema enforces: a deep pit has no external steps; a shallow pit has at least one; only a separator carries a partition and two fractions; an exported stream names its use and transport link. A digester followed by a lagoon is simply two ordered external steps. Lagoon steps' unit processes also carry the lagoon water balance (rain, evaporation, flush water); its effluent volume is the term handed to land application.
 
