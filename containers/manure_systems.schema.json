@@ -28,6 +28,14 @@
         "process_id": {
           "type": "string",
           "description": "losses and infrastructure of the in-house step (unit_processes)"
+        },
+        "emptying_per_year": {
+          "type": "integer",
+          "enum": [
+            1,
+            2
+          ],
+          "description": "deep pit only: 1 = emptied in fall after harvest (12-month storage); 2 = fall after harvest and spring before planting (6-month storage). Sets the IPCC storage-period MCF row; timing of application is in production_systems.manure_application"
         }
       }
     },
@@ -125,11 +133,40 @@
                     "process_id": {
                       "type": "string",
                       "description": "losses, water balance (lagoons) and infrastructure of this step (unit_processes)"
+                    },
+                    "sludge": {
+                      "$ref": "#/$defs/sludge"
                     }
-                  }
+                  },
+                  "allOf": [
+                    {
+                      "if": {
+                        "not": {
+                          "properties": {
+                            "type": {
+                              "enum": [
+                                "anaerobic_lagoon_single_stage",
+                                "anaerobic_lagoon_multi_stage"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "then": {
+                        "not": {
+                          "required": [
+                            "sludge"
+                          ]
+                        }
+                      }
+                    }
+                  ]
                 }
               }
             }
+          },
+          "sludge": {
+            "$ref": "#/$defs/sludge"
           }
         },
         "allOf": [
@@ -166,6 +203,27 @@
                       "liquid_fraction"
                     ]
                   }
+                ]
+              }
+            }
+          },
+          {
+            "if": {
+              "not": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "anaerobic_lagoon_single_stage",
+                      "anaerobic_lagoon_multi_stage"
+                    ]
+                  }
+                }
+              }
+            },
+            "then": {
+              "not": {
+                "required": [
+                  "sludge"
                 ]
               }
             }
@@ -214,6 +272,52 @@
         "properties": {
           "external_steps": {
             "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "in_house": {
+            "properties": {
+              "type": {
+                "const": "shallow_pit"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "in_house": {
+            "not": {
+              "required": [
+                "emptying_per_year"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "in_house": {
+            "properties": {
+              "type": {
+                "const": "deep_pit"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "in_house": {
+            "required": [
+              "emptying_per_year"
+            ]
           }
         }
       }
@@ -306,6 +410,7 @@
                 "type": "string",
                 "enum": [
                   "solid_storage",
+                  "drying",
                   "composting",
                   "pyrolysis",
                   "gasification",
@@ -357,6 +462,28 @@
           "transport_link_id",
           "land_pool_id"
         ]
+      }
+    },
+    "sludge": {
+      "type": "object",
+      "description": "lagoon only: liquid is pumped to land routinely in crop seasons and the lagoon is never emptied; accumulated sludge is removed infrequently by these routes",
+      "required": [
+        "removal_interval_years",
+        "routes"
+      ],
+      "properties": {
+        "removal_interval_years": {
+          "type": "number",
+          "description": "years between sludge removals"
+        },
+        "routes": {
+          "type": "array",
+          "minItems": 1,
+          "description": "shares summing to 1: agitated and land-applied as slurry on the farm (on_site, no steps), or excavated and hauled off-site for drying, composting or other processing",
+          "items": {
+            "$ref": "#/$defs/solid_route"
+          }
+        }
       }
     }
   }
