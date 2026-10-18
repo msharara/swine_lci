@@ -8,7 +8,7 @@ template (draft 2020-12) for one container; the records themselves will live und
 |---|---|---|
 | `herd_systems` | Building block | The animals only: stages, animal-days, weights, intake, requirements, mortality, excretion, breeding per functional unit |
 | `sites` | Building block | A place with buildings: region, housing type, stages supported, capacity, infrastructure and energy |
-| `manure_systems` | Building block | Manure custody from barn floor to storage exit: deep or shallow pit, then ordered external steps |
+| `manure_systems` | Building block | Manure custody from barn floor to land application: deep or shallow pit, ordered external steps, optional solid-liquid separation |
 | `feeding_programs` | Building block | Phase diets per stage: nutrient spec plus ingredient recipe with origin regions |
 | `mortality_systems` | Building block | Dead-animal custody per site: composting (in-vessel or aerated static bin), refrigerated storage for rendering, or on-site incineration; sizing, costs, resources, outputs |
 | `production_systems` | Building block | The assembly: herd stages placed on sites, a manure system and a mortality system per site, the feeding program, derived transport links |

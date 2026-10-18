@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "lci/containers/manure_systems.schema.json",
   "title": "manure_systems",
-  "description": "Manure custody chain from the barn floor to leaving the farm's storage: in-house collection, then ordered external steps, optionally split by a solid-liquid separator into solid and liquid chains. Starts where excretion ends; land application is handled by land_pools.",
+  "description": "Manure custody chain from the barn floor to land application: in-house collection, then ordered external steps, optionally split by a solid-liquid separator into solid and liquid chains. Starts where excretion ends. Every stream ends in land application (mass balance); the land itself is in land_pools.",
   "type": "object",
   "required": [
     "manure_system_id",
@@ -33,7 +33,7 @@
     },
     "external_steps": {
       "type": "array",
-      "description": "in order of flow; a solid_liquid_separator, if present, is the last step and its two fractions carry their own steps to the farm exit",
+      "description": "in order of flow; a solid_liquid_separator, if present, is the last step and its two fractions carry their own chains to land application",
       "items": {
         "type": "object",
         "required": [
@@ -85,35 +85,28 @@
             }
           },
           "solid_fraction": {
-            "$ref": "#/$defs/branch",
+            "type": "object",
+            "required": [
+              "routes"
+            ],
+            "description": "one or more routes with shares summing to 1; every route's residue (stored solids, compost, biochar, ash) ends in land application",
             "properties": {
-              "steps": {
+              "routes": {
+                "type": "array",
+                "minItems": 1,
                 "items": {
-                  "type": "object",
-                  "required": [
-                    "type"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "solid_storage",
-                        "composting"
-                      ]
-                    },
-                    "process_id": {
-                      "type": "string",
-                      "description": "losses, water balance (lagoons) and infrastructure of this step (unit_processes)"
-                    }
-                  }
+                  "$ref": "#/$defs/solid_route"
                 }
               }
             }
           },
           "liquid_fraction": {
-            "$ref": "#/$defs/branch",
+            "type": "object",
+            "description": "liquid chain on the farm; its effluent goes to land application via production_systems.manure_application",
             "properties": {
               "steps": {
+                "type": "array",
+                "description": "in order of flow; may be empty",
                 "items": {
                   "type": "object",
                   "required": [
@@ -280,81 +273,90 @@
         }
       }
     },
-    "exit": {
+    "solid_route": {
       "type": "object",
-      "description": "how this stream leaves custody at the farm",
       "required": [
-        "fate",
-        "share"
+        "share",
+        "location",
+        "steps"
       ],
       "properties": {
         "share": {
           "$ref": "#/$defs/amount",
-          "description": "fraction of this stream taking this exit; shares across a branch's exits sum to 1"
+          "description": "fraction of the solid fraction taking this route"
         },
-        "fate": {
+        "location": {
           "type": "string",
           "enum": [
-            "land_applied",
-            "kept_on_site",
-            "exported_off_site"
+            "on_site",
+            "off_site"
           ],
-          "description": "land_applied continues to land pools via production_systems.manure_application; kept_on_site stays on the farm for another use (e.g. bedding, on-farm compost use) and is reported, not land-applied; exported_off_site leaves the farm"
+          "description": "on_site: processed on the farm, residue land-applied via production_systems.manure_application; off_site: hauled promptly after separation and processed elsewhere"
         },
-        "use": {
-          "type": "string",
-          "enum": [
-            "fuel_pyrolysis",
-            "fuel_gasification",
-            "composting_feedstock"
-          ],
-          "description": "off-site use; required when exported"
-        },
-        "removal_interval_days": {
-          "type": "number",
-          "description": "days between removals from the site (e.g. 7 for weekly); sets on-site holding time"
+        "steps": {
+          "type": "array",
+          "description": "processing in order of flow, on the farm or at the off-site processor; may be empty (e.g. hauled and land-applied directly)",
+          "items": {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "solid_storage",
+                  "composting",
+                  "pyrolysis",
+                  "gasification",
+                  "other"
+                ]
+              },
+              "process_id": {
+                "type": "string",
+                "description": "losses, resource use (energy, labor, amendments) and infrastructure of this step (unit_processes)"
+              },
+              "name": {
+                "type": "string",
+                "description": "what the step is, required for other (e.g. a novel process)"
+              }
+            },
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "other"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "name",
+                "process_id"
+              ]
+            }
+          }
         },
         "transport_link_id": {
           "type": "string",
-          "description": "farm to off-site processor (transport_links); required when exported"
+          "description": "farm to off-site processor (equipment, labor, energy)"
+        },
+        "land_pool_id": {
+          "type": "string",
+          "description": "off-site land receiving the residue"
         }
       },
-      "allOf": [
-        {
-          "if": {
-            "properties": {
-              "fate": {
-                "const": "exported_off_site"
-              }
-            }
-          },
-          "then": {
-            "required": [
-              "use",
-              "transport_link_id"
-            ]
+      "if": {
+        "properties": {
+          "location": {
+            "const": "off_site"
           }
         }
-      ]
-    },
-    "branch": {
-      "type": "object",
-      "required": [
-        "exits"
-      ],
-      "properties": {
-        "steps": {
-          "type": "array",
-          "description": "in order of flow; may be empty when the stream exits directly"
-        },
-        "exits": {
-          "type": "array",
-          "minItems": 1,
-          "description": "one or more exits with shares summing to 1; e.g. 0.7 exported weekly for gasification and 0.3 composted and land-applied on the farm",
-          "items": {
-            "$ref": "#/$defs/exit"
-          }
-        }
+      },
+      "then": {
+        "required": [
+          "transport_link_id",
+          "land_pool_id"
+        ]
       }
     }
   }
