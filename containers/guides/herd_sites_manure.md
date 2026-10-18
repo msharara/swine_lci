@@ -6,7 +6,7 @@ Plain-language reading of four containers that are kept deliberately separate:
 |---|---|---|---|
 | Herd | [`herd_systems`](../herd_systems.schema.json) | The animals: a group fed and maintained | Sites, buildings, manure handling |
 | Site | [`sites`](../sites.schema.json) | A place with buildings | Animals, manure chain |
-| Manure system | [`manure_systems`](../manure_systems.schema.json) | Custody of manure from barn floor to storage exit | Animals, land application |
+| Manure system | [`manure_systems`](../manure_systems.schema.json) | Custody of manure from barn floor to land application, optionally split into solid and liquid chains with on- or off-site solids processing | Animals, land application |
 | Feeding program | [`feeding_programs`](../feeding_programs.schema.json) | The diets fed per stage and phase: nutrient spec plus ingredient recipe | Animals, requirements |
 | Mortality system | [`mortality_systems`](../mortality_systems.schema.json) | Custody of dead animals at a site: equipment, resources, outputs | Animals, mortality rates |
 | Production system | [`production_systems`](../production_systems.schema.json) | The assembly that puts the others together | Any numbers of its own |
@@ -67,7 +67,17 @@ Production system
 | `external_steps[]` | depends | Ordered steps: slurry_tank_above_ground, anaerobic_digester, anaerobic_lagoon_single_stage, anaerobic_lagoon_multi_stage |
 | each step's `process_id` | no | Its losses and infrastructure |
 
-Rules the schema enforces: a deep pit has no external steps; a shallow pit has at least one.
+| `external_steps[].type` = `solid_liquid_separator` | optional | Splits manure into a solid and a liquid fraction; must be the last external step |
+| `partition` | separator | Share of mass, total solids, VS, N, P and K sent to the solid fraction |
+| `liquid_fraction.steps[]` | separator | Tank, digester and lagoon types in order of flow; the effluent goes to land application |
+| `solid_fraction.routes[]` | separator | One or more routes with shares summing to 1 |
+| `routes[].share` | yes | Share of the solid fraction taking this route |
+| `routes[].location` | yes | `on_site` (processed on the farm) or `off_site` (hauled promptly after separation, processed elsewhere) |
+| `routes[].steps[]` | yes | solid_storage, composting, pyrolysis, gasification, or `other` (a novel process, with `name` and `process_id`); each step's `process_id` carries its losses, resource use and infrastructure; may be empty |
+| `routes[].transport_link_id` | if off_site | Farm to processor: equipment, labor, energy |
+| `routes[].land_pool_id` | if off_site | Off-site land that receives the residue |
+
+Rules the schema enforces: a deep pit has no external steps; a shallow pit has at least one; only a separator carries a partition and two fractions; an off-site route names its transport link and receiving land; an `other` step names itself and its unit process. A digester followed by a lagoon is simply two ordered external steps. Every stream ends in land application for the mass balance: the liquid effluent and on-site residues (stored solids, compost, biochar, ash) through `production_systems.manure_application`, off-site residues on the route's land pool. Lagoon steps' unit processes also carry the lagoon water balance (rain, evaporation, flush water); its effluent volume is the term handed to land application.
 
 ## Mortality system
 
