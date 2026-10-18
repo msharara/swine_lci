@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "lci/containers/manure_systems.schema.json",
   "title": "manure_systems",
-  "description": "Manure custody chain from the barn floor to the storage exit: in-house collection, then ordered external steps. Starts where excretion ends; land application is handled by land_pools.",
+  "description": "Manure custody chain from the barn floor to leaving the farm's storage: in-house collection, then ordered external steps, optionally split by a solid-liquid separator into solid and liquid chains. Starts where excretion ends; land application is handled by land_pools.",
   "type": "object",
   "required": [
     "manure_system_id",
@@ -33,7 +33,7 @@
     },
     "external_steps": {
       "type": "array",
-      "description": "in order of flow",
+      "description": "in order of flow; a solid_liquid_separator, if present, is the last step and its two fractions carry their own steps to the farm exit",
       "items": {
         "type": "object",
         "required": [
@@ -46,14 +46,138 @@
               "slurry_tank_above_ground",
               "anaerobic_digester",
               "anaerobic_lagoon_single_stage",
-              "anaerobic_lagoon_multi_stage"
+              "anaerobic_lagoon_multi_stage",
+              "solid_liquid_separator"
             ]
           },
           "process_id": {
             "type": "string",
-            "description": "losses and infrastructure of this step (unit_processes)"
+            "description": "losses, water balance (lagoons) and infrastructure of this step (unit_processes)"
+          },
+          "partition": {
+            "type": "object",
+            "description": "share of each constituent sent to the solid fraction (fraction, 0-1); the rest goes to the liquid fraction",
+            "required": [
+              "mass",
+              "total_solids",
+              "nitrogen",
+              "phosphorus"
+            ],
+            "properties": {
+              "mass": {
+                "$ref": "#/$defs/amount"
+              },
+              "total_solids": {
+                "$ref": "#/$defs/amount"
+              },
+              "volatile_solids": {
+                "$ref": "#/$defs/amount"
+              },
+              "nitrogen": {
+                "$ref": "#/$defs/amount"
+              },
+              "phosphorus": {
+                "$ref": "#/$defs/amount"
+              },
+              "potassium": {
+                "$ref": "#/$defs/amount"
+              }
+            }
+          },
+          "solid_fraction": {
+            "$ref": "#/$defs/branch",
+            "properties": {
+              "steps": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "type"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "solid_storage",
+                        "composting"
+                      ]
+                    },
+                    "process_id": {
+                      "type": "string",
+                      "description": "losses, water balance (lagoons) and infrastructure of this step (unit_processes)"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "liquid_fraction": {
+            "$ref": "#/$defs/branch",
+            "properties": {
+              "steps": {
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "type"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "slurry_tank_above_ground",
+                        "anaerobic_digester",
+                        "anaerobic_lagoon_single_stage",
+                        "anaerobic_lagoon_multi_stage"
+                      ]
+                    },
+                    "process_id": {
+                      "type": "string",
+                      "description": "losses, water balance (lagoons) and infrastructure of this step (unit_processes)"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "solid_liquid_separator"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "partition",
+                "solid_fraction",
+                "liquid_fraction"
+              ]
+            },
+            "else": {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "partition"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "solid_fraction"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "liquid_fraction"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
       }
     }
   },
@@ -101,5 +225,126 @@
         }
       }
     }
-  ]
+  ],
+  "$defs": {
+    "amount": {
+      "type": "object",
+      "description": "reference quantity",
+      "required": [
+        "value",
+        "unit_id",
+        "basis",
+        "source_id"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "id in another container"
+        },
+        "basis": {
+          "type": "string",
+          "enum": [
+            "as_fed",
+            "dry_matter",
+            "per_head",
+            "per_head_day",
+            "per_stage",
+            "per_functional_unit",
+            "per_area",
+            "absolute"
+          ]
+        },
+        "source_id": {
+          "type": "string",
+          "description": "source id (sources.schema.json)"
+        },
+        "quality_id": {
+          "type": "string",
+          "description": "quality record id (quality.schema.json)"
+        },
+        "note": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "entered",
+            "derived",
+            "overridden"
+          ],
+          "default": "entered",
+          "description": "entered = typed in; derived = computed by the engine each run; overridden = user value replacing a derivable one, kept as is and flagged in results (cite source_id)"
+        }
+      }
+    },
+    "exit": {
+      "type": "object",
+      "description": "how this stream leaves custody at the farm",
+      "required": [
+        "fate"
+      ],
+      "properties": {
+        "fate": {
+          "type": "string",
+          "enum": [
+            "land_applied",
+            "exported_off_site"
+          ],
+          "description": "land_applied continues to land pools via production_systems.manure_application; exported_off_site leaves the farm"
+        },
+        "use": {
+          "type": "string",
+          "enum": [
+            "fuel_pyrolysis",
+            "fuel_gasification",
+            "composting_feedstock"
+          ],
+          "description": "off-site use; required when exported"
+        },
+        "removal_interval_days": {
+          "type": "number",
+          "description": "days between removals from the site (e.g. 7 for weekly); sets on-site holding time"
+        },
+        "transport_link_id": {
+          "type": "string",
+          "description": "farm to off-site processor (transport_links); required when exported"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "fate": {
+                "const": "exported_off_site"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "use",
+              "transport_link_id"
+            ]
+          }
+        }
+      ]
+    },
+    "branch": {
+      "type": "object",
+      "required": [
+        "exit"
+      ],
+      "properties": {
+        "steps": {
+          "type": "array",
+          "description": "in order of flow; may be empty when the stream exits directly"
+        },
+        "exit": {
+          "$ref": "#/$defs/exit"
+        }
+      }
+    }
+  }
 }
