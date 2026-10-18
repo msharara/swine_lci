@@ -119,5 +119,27 @@
       "technological": 2
     },
     "distribution": "none"
+  },
+  {
+    "quality_id": "q_d384",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 2,
+      "temporal": 2,
+      "geographic": 2,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_d384_typical",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 4,
+      "geographic": 2,
+      "technological": 3
+    },
+    "distribution": "none"
   }
 ]

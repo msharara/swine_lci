@@ -1,0 +1,16 @@
+parameter,stage,value,unit,source_id,note
+DMD,nursery,80,percent,asabe_d384_2,Table 18b reference diet assumption (dry matter digestibility)
+DMD,finishing,82,percent,asabe_d384_2,Table 18b reference diet assumption
+DMD,gilt_development,82,percent,asabe_d384_2,grow-finish value applied to gilts
+DMD,gestation,82,percent,asabe_d384_2,Table 18c reference diet assumption
+DMD,farrowing_lactation,82,percent,asabe_d384_2,Table 18c reference diet assumption
+C_DM,all,88,percent,asabe_d384_2,Tables 18b-c assume 88% DM corn-soybean meal diets; used where a diet prints no DM
+FFLG_G,nursery,350,g/day,asabe_d384_2,Table 15 'high' lean growth capacity (NRC 1998); modern genetics
+DP_F,finishing,74,percent,pic_nutrition_2025,PIC 2025 carcass yield assumption (Income over total cost example)
+FFLP_F,finishing,53,percent,assumed_d384,ASSUMED fat-free lean % at market weight; no open 2022 value found; sensitivity flagged
+GLTG,gestation,19.205,kg,asabe_d384_2,Table 16 recommended gestation lean tissue gain
+GL,gestation,114,days,pic_nutrition_2025,PIC gestation length (standard assumes 115)
+LLTG,farrowing_lactation,-4.20,kg,asabe_d384_2,Table 17 recommended lactation lean tissue gain
+sow_weight_change_lactation,farrowing_lactation,-13,kg,asabe_d384_2,Table 18c reference sow weight change in lactation
+conceptus_mass_per_pig,gestation,2.277,kg/pig,asabe_d384_2,litter-related mass term in Eq 9.5(7); removed from sow weight after farrowing
+piglet_birth_weight,gestation,1.4,kg/pig,assumed_d384,ASSUMED average born-alive piglet weight; no open 2022 value staged
