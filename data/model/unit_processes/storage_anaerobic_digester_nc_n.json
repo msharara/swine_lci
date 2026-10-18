@@ -1,0 +1,96 @@
+{
+  "process_id": "storage_anaerobic_digester_nc_n",
+  "name": "Manure storage, anaerobic digester (enclosed), NC, per kg N in",
+  "region_id": "NC",
+  "reference": {
+    "flow_id": "manure_nitrogen_in",
+    "amount": {
+      "value": 1,
+      "unit_id": "kg",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "dinitrogen_monoxide_air",
+      "direction": "output",
+      "amount": {
+        "value": 0.0,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "epa_2009_manure_tsd",
+        "quality_id": "q_storage_ipcc2006",
+        "origin": "derived",
+        "note": "direct: EF3 0.0 x 44/28"
+      },
+      "estimation_method": {
+        "method": "IPCC Vol.4 Ch.10 Eq.10.25",
+        "ipcc_tier": 2
+      }
+    },
+    {
+      "flow_id": "ammonia_air",
+      "direction": "output",
+      "amount": {
+        "value": 0.303571,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "mpi_nz_2025_ipcc2019",
+        "quality_id": "q_storage_secondary",
+        "origin": "derived",
+        "note": "Frac_GasMS 0.25 counted as all NH3, x 17/14"
+      },
+      "estimation_method": {
+        "method": "IPCC Vol.4 Ch.10 Eq.10.26",
+        "ipcc_tier": 2
+      }
+    },
+    {
+      "flow_id": "dinitrogen_monoxide_air",
+      "direction": "output",
+      "amount": {
+        "value": 0.003929,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "mpi_nz_2025_ipcc2019",
+        "quality_id": "q_storage_secondary",
+        "origin": "derived",
+        "note": "indirect: (Frac_GasMS x EF4 + Frac_LeachMS x EF5) x 44/28; sources: ipcc_2019_v4_ch11, mpi_nz_2025_ipcc2019, nrcs_cps521_2023"
+      },
+      "estimation_method": {
+        "method": "IPCC Vol.4 Ch.10 Eq.10.28-10.29",
+        "ipcc_tier": 2
+      }
+    },
+    {
+      "flow_id": "nitrogen_leached_water",
+      "direction": "output",
+      "amount": {
+        "value": 0.0,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "nrcs_cps521_2023",
+        "quality_id": "q_storage_secondary",
+        "origin": "derived",
+        "note": "lined or contained storage"
+      }
+    },
+    {
+      "flow_id": "manure_nitrogen_out",
+      "direction": "output",
+      "amount": {
+        "value": 0.75,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "epa_2009_manure_tsd",
+        "quality_id": "q_storage_ipcc2006",
+        "origin": "derived",
+        "note": "1 - NH3-N - N2O-N - leached N; sources: epa_2009_manure_tsd, mpi_nz_2025_ipcc2019, nrcs_cps521_2023"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

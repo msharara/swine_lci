@@ -1,0 +1,32 @@
+{
+  "process_id": "separation_decanter_centrifuge",
+  "name": "Solid-liquid separation, decanter centrifuge, per t manure in",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "manure_to_separator",
+    "amount": {
+      "value": 1,
+      "unit_id": "t",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "electricity",
+      "direction": "input",
+      "amount": {
+        "value": 3.65,
+        "unit_id": "kWh",
+        "basis": "absolute",
+        "source_id": "lyons_2021_separation",
+        "quality_id": "q_storage_ipcc2019",
+        "origin": "derived",
+        "note": "range 2.2-5.1 kWh per tonne"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

@@ -1,0 +1,65 @@
+{
+  "process_id": "storage_anaerobic_lagoon_nc_vs",
+  "name": "Manure storage, anaerobic lagoon (single or multi-stage), NC, per kg VS in.",
+  "region_id": "NC",
+  "reference": {
+    "flow_id": "manure_volatile_solids_in",
+    "amount": {
+      "value": 1,
+      "unit_id": "kg",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "methane_biogenic_air",
+      "direction": "output",
+      "amount": {
+        "value": 0.237984,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "epa_2009_manure_tsd",
+        "quality_id": "q_storage_ipcc2006",
+        "origin": "derived",
+        "note": "VS x B0 x MCF (0.74) x 0.67; sources: epa_2009_manure_tsd, stoichiometry"
+      },
+      "estimation_method": {
+        "method": "IPCC 2006/2019 Vol.4 Ch.10 Eq.10.23",
+        "ipcc_tier": 2
+      }
+    },
+    {
+      "flow_id": "carbon_dioxide_biogenic_air",
+      "direction": "output",
+      "amount": {
+        "value": 0.436304,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "unfccc_cdm_tool14_2024",
+        "quality_id": "q_storage_ipcc2006",
+        "origin": "derived",
+        "note": "CH4 x (0.4/0.6) x 44/16; biogas CH4 share 0.6; sources: epa_2009_manure_tsd, unfccc_cdm_tool14_2024"
+      },
+      "estimation_method": {
+        "method": "biogas stoichiometry"
+      }
+    },
+    {
+      "flow_id": "manure_volatile_solids_out",
+      "direction": "output",
+      "amount": {
+        "value": 0.375,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "expert_mahmoud_2026",
+        "quality_id": "q_storage_expert",
+        "origin": "derived",
+        "note": "1 - VS destroyed (50-75%, midpoint)"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

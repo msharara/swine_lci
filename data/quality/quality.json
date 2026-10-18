@@ -141,5 +141,93 @@
       "technological": 3
     },
     "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_ipcc2006",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 2,
+      "temporal": 5,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_ipcc2019",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 2,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_secondary",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 2,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_expert",
+    "pedigree": {
+      "reliability": 4,
+      "completeness": 4,
+      "temporal": 1,
+      "geographic": 3,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_awmfh",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 3,
+      "temporal": 5,
+      "geographic": 2,
+      "technological": 3
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_noaa",
+    "pedigree": {
+      "reliability": 1,
+      "completeness": 1,
+      "temporal": 1,
+      "geographic": 1,
+      "technological": 1
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_proxy",
+    "pedigree": {
+      "reliability": 2,
+      "completeness": 3,
+      "temporal": 5,
+      "geographic": 4,
+      "technological": 2
+    },
+    "distribution": "none"
+  },
+  {
+    "quality_id": "q_storage_design",
+    "pedigree": {
+      "reliability": 3,
+      "completeness": 3,
+      "temporal": 5,
+      "geographic": 2,
+      "technological": 3
+    },
+    "distribution": "none"
   }
 ]

@@ -99,3 +99,43 @@ Nursery N is about half the typical value because the nursery runs to 23 kg and 
 - Fat-free lean % and piglet birth weight are assumptions.
 - Boars have no D384.2 equation and are not yet in the herd record.
 - Diet DM is not printed for most diets; 88% is used.
+
+## Manure storage (IPCC Tier 2, stand-in factors)
+
+`scripts/build_storage.py` reads `staged/storage/storage_factors.csv` and writes 40 unit processes to `model/unit_processes/`. Each storage step has one process per kg of VS in (`storage_<system>_<region>_vs`) and one per kg of N in (`..._n`), so steps chain: the VS or N out of one step is the input of the next. Lagoons add P and K splits between effluent and sludge (`storage_anaerobic_lagoon_us_p`, `_k`), and a water balance per m2 of surface per year (`lagoon_water_balance_<region>`). Infrastructure is per m3 of capacity per year of service life (`infrastructure_*`), and handling energy is per m3 removed or per t separated.
+
+Method:
+- CH4 = VS x B0 x MCF x 0.67. Biogenic CO2 = CH4 x (0.4/0.6) by volume (biogas CH4 share 0.6). VS degraded in pits and tanks = 0.9 x (CH4 + CO2) mass (Buswell stoichiometry); lagoon and digester VS destruction = 62.5% (expert range 50-75%).
+- Digester: CH4 produced = B0 x VS destroyed; 2.8% leaks, 1% of the burned gas slips; recovered CH4 is reported, not allocated.
+- N2O = EF3 + Frac_GasMS x EF4 + Frac_LeachMS x EF5; Frac_GasMS is counted as all NH3; Frac_LeachMS = 0 for lined or contained storage.
+- Lagoon N not explained by NH3 and N2O closes as "unaccounted" (mostly N2) against the AWMFH retained share (25%). Retained N splits to sludge by the sludge N:P ratio.
+
+**Stand-in factors.** IPCC 2019 Ch. 10 Tables 10.16-10.22 could not be read (the PDF host is blocked and the text extract stops at p. 10.33). MCF and EF3 are IPCC 2006 Tier 2 values as reproduced by EPA (2009, 2017), at the 1991-2020 state mean temperature (NC 15.3 C, IA 9.1 C). Frac_GasMS for pits, lagoons and digesters is IPCC 2019 as quoted by a NZ government paper. Each value carries its source and a quality record; swap in IPCC 2019 values when the chapter is read.
+
+### Results per kg in
+| Step | CH4, kg/kg VS (NC / IA) | N lost as NH3 + N2O, kg/kg N |
+|---|---|---|
+| Deep pit | 0.087 / 0.055 | 0.252 |
+| Shallow pit (<1 month) | 0.010 / 0.010 | 0.252 |
+| Above-ground slurry tank | 0.087 / 0.055 | 0.265 |
+| Anaerobic lagoon | 0.238 / 0.212 | 0.400 (+0.350 unaccounted) |
+| Anaerobic digester (emitted) | 0.008 / 0.008 | 0.250 |
+| Solid storage | 0.013 / 0.006 | 0.455 |
+| Composting (static pile) | 0.002 / 0.002 | 0.606 |
+
+### Checks
+| Check | Reference | Model |
+|---|---|---|
+| NC lagoon N (Smithfield Phase 2 B1b, Table AL.5, 4,320-head feeder-finish) | effluent 22%, sludge 12%, lost or unaccounted 66% | effluent 16%, sludge 9%, lost 75% |
+| Lagoon VS destroyed, Buswell from CH4 + CO2 | expert 50-75% | NC 61%, IA 54% |
+| EPA 2015 state MCF (Annex 3.11 Table A-186) | NC lagoon 78%, liquid/deep pit 41%; IA 70%, 26% | NC 74%, 27%; IA 66%, 17% |
+
+The Smithfield balance also leaves 50% of P unaccounted, which a lagoon cannot lose, so its sludge P is likely understated.
+
+### Known gaps
+- IPCC 2019 Tables 10.16-10.22 (B0, MCF by storage period, EF3, Frac_GasMS); deep pits emptied once or twice a year share one MCF until the 12- and 6-month rows are read.
+- Digester Frac_GasMS: sources give 0.25 and 0.05-0.5.
+- Iowa evaporation is a Minnesota proxy.
+- CO2 and VS loss for solid storage and composting; pyrolysis and gasification have no IPCC factors.
+- Infrastructure: slats, beams and tank floors are not included; shallow-pit depth (2 ft) and HDPE density are assumed; lives are NRCS minimum practice lives (15-20 yr).
+- Agitation energy is a midpoint of a derived bound (rated power x hours).

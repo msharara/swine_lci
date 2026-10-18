@@ -1,0 +1,45 @@
+{
+  "process_id": "infrastructure_deep_pit",
+  "name": "Deep pit, concrete; per m3 of capacity per year",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "storage_capacity_year",
+    "amount": {
+      "value": 1,
+      "unit_id": "m3_year",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "concrete_ready_mix",
+      "direction": "input",
+      "amount": {
+        "value": 0.0061,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "iowa_iac_567_65_2020",
+        "quality_id": "q_storage_design",
+        "origin": "derived",
+        "note": "walls, floor, footing; spread over 15 yr; sources: iowa_iac_567_65_2020, nrcs_practice_lifespan"
+      }
+    },
+    {
+      "flow_id": "reinforcing_steel",
+      "direction": "input",
+      "amount": {
+        "value": 0.183333,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "iowa_iac_567_65_2020",
+        "quality_id": "q_storage_design",
+        "origin": "derived",
+        "note": "spread over 15 yr; sources: iowa_iac_567_65_2020, nrcs_practice_lifespan"
+      }
+    }
+  ],
+  "system_layer": "direct_supply"
+}

@@ -1,0 +1,64 @@
+parameter,system,region,value,unit,source_id,quality_id,page_or_table,as_printed,note
+B0,all,all,0.48,m3 CH4/kg VS,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-2 p.19,0.48,all swine classes; IPCC 2019 Table 10.16A (North America) not yet read
+ch4_density,all,all,0.67,kg/m3,stoichiometry,q_derived,,,IPCC conversion factor for m3 CH4 to kg
+ch4_share_biogas,all,all,0.6,m3/m3,unfccc_cdm_tool14_2024,q_storage_ipcc2006,Data/Parameter table 1,0.6,sets biogenic CO2 = CH4 x (0.4/0.6) by volume for every anaerobic step
+vs_per_biogas_mass,all,all,0.9,kg VS/kg biogas,stoichiometry,q_derived,,,"Buswell: C6H10O5 + H2O -> 3 CH4 + 3 CO2 (162 g VS -> 180 g gas); VS degraded in pits and tanks"
+MCF,deep_pit,NC,0.27,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,27% at 15 C (pit storage >1 month),IPCC 2006 row; 12- and 6-month rows of IPCC 2019 Table 10.17 not yet read; NC 1991-2020 mean 15.3 C
+MCF,deep_pit,IA,0.17,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,17% at <10 C,IA 1991-2020 mean 9.1 C
+MCF,shallow_pit,all,0.03,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,3% (pit storage <1 month; cool and temperate),
+MCF,slurry_tank_above_ground,NC,0.27,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,27% (liquid/slurry without crust at 15 C),swine tanks assumed uncrusted
+MCF,slurry_tank_above_ground,IA,0.17,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,17% (without crust at <10 C),
+MCF,anaerobic_lagoon,NC,0.74,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,74% at 15 C,single- and multi-stage treated alike in v1
+MCF,anaerobic_lagoon,IA,0.66,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-3 p.20,66% at <10 C,
+MCF,solid_storage,NC,0.04,fraction,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-185,4 (temperate),
+MCF,solid_storage,IA,0.02,fraction,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-185,2 (cool),
+MCF,composting,all,0.005,fraction,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-185,0.5 (static pile),
+vs_destroyed,anaerobic_lagoon,all,0.625,fraction,expert_mahmoud_2026,q_storage_expert,thread 2026-10-18,50-75%,midpoint; range for sensitivity
+vs_destroyed,anaerobic_digester,all,0.625,fraction,expert_mahmoud_2026,q_storage_expert,thread 2026-10-18,50-75%,CH4 produced = B0 x VS destroyed
+leakage,anaerobic_digester,all,0.028,fraction,unfccc_cdm_tool14_2024,q_storage_ipcc2006,Data/Parameter table 3,0.028,enclosed digester; covered lagoon 0.10
+combustion_slip,anaerobic_digester,all,0.01,fraction,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-4,destruction efficiency 0.99,flare or engine
+EF3,deep_pit,all,0.002,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Deep Pit 0.002,
+EF3,shallow_pit,all,0.002,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Deep Pit 0.002,pit row used for the short in-house residence
+EF3,slurry_tank_above_ground,all,0.005,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Liquid/Slurry 0.005,IPCC gives 0 without crust; EPA single value kept until Table 10.21 is read
+EF3,anaerobic_lagoon,all,0,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Uncovered Anaerobic Lagoon 0,
+EF3,anaerobic_digester,all,0,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Digester 0,IPCC 2019 0.0006 (secondary)
+EF3,solid_storage,all,0.005,kg N2O-N/kg N,epa_2009_manure_tsd,q_storage_ipcc2006,Table A-5,Solid Storage 0.005,
+EF3,composting,all,0.006,kg N2O-N/kg N,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-187,Composting static 0.006,
+frac_gas,deep_pit,all,0.25,fraction,mpi_nz_2025_ipcc2019,q_storage_secondary,Table 4 p.10,0.25 (pit storage),all counted as NH3 (decision 2026-10-18)
+frac_gas,shallow_pit,all,0.25,fraction,mpi_nz_2025_ipcc2019,q_storage_secondary,Table 4 p.10,0.25 (pit storage),
+frac_gas,slurry_tank_above_ground,all,0.26,fraction,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-188,Liquid/slurry 26 (volatilization %),no IPCC 2019 swine liquid/slurry value read
+frac_gas,anaerobic_lagoon,all,0.40,fraction,mpi_nz_2025_ipcc2019,q_storage_secondary,Table 4 p.10,0.40,
+frac_gas,anaerobic_digester,all,0.25,fraction,mpi_nz_2025_ipcc2019,q_storage_secondary,Table 4 p.10,0.25,second source gives 0.05-0.5; resolve from Table 10.22
+frac_gas,solid_storage,all,0.45,fraction,epa_ghgi_2017_annex3_11,q_storage_ipcc2006,Table A-188,Solid storage 45,
+frac_gas,composting,all,0.6,fraction,mpi_nz_2025_ipcc2019,q_storage_secondary,Table 4 p.10,0.6 (passive windrow),
+frac_leach,all,all,0,fraction,nrcs_cps521_2023,q_storage_secondary,,,"lined or contained storage (NC 359 clay liner max 1.25e-6 cm/s); EPA runoff 0.2-0.9% kept as check"
+EF4,all,all,0.010,kg N2O-N/kg NH3-N,ipcc_2019_v4_ch11,q_storage_ipcc2019,Table 11.3 p.11.26,0.010,aggregated value; wet/dry split not applied
+EF5,all,all,0.011,kg N2O-N/kg N leached,ipcc_2019_v4_ch11,q_storage_ipcc2019,Table 11.3 p.11.26,0.011,
+n_retained,anaerobic_lagoon,all,0.25,fraction,nrcs_awmfh_ch11_2013,q_storage_awmfh,Table 11-5 p.11-21,20-30,midpoint; balance not explained by NH3 and N2O closes as unaccounted (N2 etc.)
+n_retained,deep_pit,all,0.775,fraction,nrcs_awmfh_ch11_2013,q_storage_awmfh,Table 11-5 p.11-21,70-85,check only
+p_retained_liquid,anaerobic_lagoon,all,0.425,fraction,nrcs_awmfh_ch11_2013,q_storage_awmfh,Table 11-5 p.11-21,35-50,rest to sludge (P not lost)
+k_retained_liquid,anaerobic_lagoon,all,0.55,fraction,nrcs_awmfh_ch11_2013,q_storage_awmfh,Table 11-5 p.11-21,50-60,rest to sludge
+sludge_n_to_p,anaerobic_lagoon,all,1.04,kg N/kg P,nrcs_awmfh_ch4_2008,q_storage_awmfh,Table 4-16(a) p.4-24,TKN 0.26 / P 0.25 (% wet),splits retained N between sludge and effluent
+precipitation,anaerobic_lagoon,NC,1.290,m/yr,noaa_cag_statewide,q_storage_noaa,NC pcp 1991-2020,mean 50.77 in,
+precipitation,anaerobic_lagoon,IA,0.903,m/yr,noaa_cag_statewide,q_storage_noaa,IA pcp 1991-2020,mean 35.55 in,
+evaporation,anaerobic_lagoon,NC,0.991,m/yr,nrcs_awmfh_app10c_1996,q_storage_awmfh,Worksheet 10A-6 p.10-3,39 in (FWS),Rocky Mount (Coastal Plain); Lake Michie 37.9 in; Duplin 49.88 in (B1b)
+evaporation,anaerobic_lagoon,IA,0.642,m/yr,dadaser_celik_2008,q_storage_proxy,p.10,642 mm summer lake (Waseca MN),PROXY until an Iowa value is read
+excavation,anaerobic_lagoon,all,0.70,m3/m3 capacity,ncsu_are_2005_b1,q_storage_design,B1a Ex. F.1-F.3,"0.70 x 49,606 yd3",rest of the berm built from the cut
+clay_liner,anaerobic_lagoon,all,0.174,m3/m3 capacity,ncsu_are_2005_b1,q_storage_design,B1a Ex. F.4,"7,509 yd3 (x1.15 compaction)",
+hdpe_liner_area,anaerobic_lagoon,all,0.348,m2/m3 capacity,ncsu_are_2005_b1,q_storage_design,B1a Ex. F.5,"142,257 ft2",synthetic-liner alternative
+hdpe_thickness,anaerobic_lagoon,all,0.001524,m,nrcs_cps521_2023,q_storage_design,Table 1,60 mil,
+hdpe_density,all,all,940,kg/m3,assumed_storage,q_storage_expert,,,
+life,anaerobic_lagoon,all,15,yr,nrcs_practice_lifespan,q_storage_design,practice 359,15,minimum practice life; HDPE liner 20 (521)
+life,hdpe_liner,all,20,yr,nrcs_practice_lifespan,q_storage_design,practice 521,20,
+concrete,deep_pit,all,0.0915,m3/m3 capacity,iowa_iac_567_65_2020,q_storage_design,derived D1 (8 ft pit),"199 m3 / 2,175 m3",slats beams columns excluded
+rebar,deep_pit,all,2.75,kg/m3 capacity,iowa_iac_567_65_2020,q_storage_design,derived D2,"5,976 kg / 2,175 m3",laps and dowels excluded
+concrete,shallow_pit,all,0.265,m3/m3 capacity,assumed_storage,q_storage_expert,D1 geometry at 2 ft depth,,"143.9 m3 / 543.7 m3; floor dominates"
+rebar,shallow_pit,all,8.1,kg/m3 capacity,assumed_storage,q_storage_expert,D2 geometry at 2 ft depth,,"4,403 kg / 543.7 m3"
+life,deep_pit,all,15,yr,nrcs_practice_lifespan,q_storage_design,practice 313,15,minimum practice life
+life,shallow_pit,all,15,yr,nrcs_practice_lifespan,q_storage_design,practice 313,15,
+steel,slurry_tank_above_ground,all,6,kg/m3 capacity,missouri_eq304_tank,q_storage_design,derived 4-8 kg/m3,,glass-fused steel; concrete floor not included
+life,slurry_tank_above_ground,all,15,yr,nrcs_practice_lifespan,q_storage_design,practice 313,15,vendors claim 30-40 yr
+agitation_shaft,all,all,0.1,kWh/m3 per event,omafra_2014_removal,q_storage_expert,derived 0.016-0.18,,midpoint; tractor PTO
+engine_efficiency,all,all,0.375,fraction,msu_e1762_1984,q_storage_awmfh,text,0.25-0.5,shaft work to diesel energy
+separator_electricity,screw_press,all,0.8,kWh/t,lyons_2021_separation,q_storage_ipcc2019,text,0.4-1.2 kWh per tonne,
+separator_electricity,decanter_centrifuge,all,3.65,kWh/t,lyons_2021_separation,q_storage_ipcc2019,text,2.2-5.1 kWh per tonne,

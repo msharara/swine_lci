@@ -1,0 +1,58 @@
+{
+  "process_id": "lagoon_water_balance_ia",
+  "name": "Anaerobic lagoon water balance, IA, per m2 of surface per year; net (precipitation - evaporation) adds to effluent volume sent to land application",
+  "region_id": "IA",
+  "reference": {
+    "flow_id": "lagoon_surface_area_year",
+    "amount": {
+      "value": 1,
+      "unit_id": "m2_year",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "precipitation_on_lagoon",
+      "direction": "input",
+      "amount": {
+        "value": 0.903,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "noaa_cag_statewide",
+        "quality_id": "q_storage_noaa",
+        "origin": "entered",
+        "note": "1991-2020 mean"
+      }
+    },
+    {
+      "flow_id": "evaporation_from_lagoon",
+      "direction": "output",
+      "amount": {
+        "value": 0.642,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "dadaser_celik_2008",
+        "quality_id": "q_storage_proxy",
+        "origin": "entered",
+        "note": "lake (free water surface) evaporation"
+      }
+    },
+    {
+      "flow_id": "lagoon_net_water_to_effluent",
+      "direction": "output",
+      "amount": {
+        "value": 0.261,
+        "unit_id": "m3",
+        "basis": "absolute",
+        "source_id": "dadaser_celik_2008",
+        "quality_id": "q_storage_proxy",
+        "origin": "derived",
+        "note": "shared term with land application; sources: dadaser_celik_2008, noaa_cag_statewide"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}

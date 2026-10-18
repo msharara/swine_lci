@@ -1,0 +1,45 @@
+{
+  "process_id": "storage_anaerobic_lagoon_us_p",
+  "name": "Anaerobic lagoon, split of potassium between effluent and sludge, per kg in",
+  "region_id": "US",
+  "reference": {
+    "flow_id": "manure_potassium_in",
+    "amount": {
+      "value": 1,
+      "unit_id": "kg",
+      "basis": "absolute",
+      "source_id": "stoichiometry",
+      "quality_id": "q_derived",
+      "origin": "entered"
+    }
+  },
+  "exchanges": [
+    {
+      "flow_id": "manure_potassium_to_effluent",
+      "direction": "output",
+      "amount": {
+        "value": 0.55,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "nrcs_awmfh_ch11_2013",
+        "quality_id": "q_storage_awmfh",
+        "origin": "derived",
+        "note": "AWMFH retained in liquid (midpoint)"
+      }
+    },
+    {
+      "flow_id": "manure_potassium_to_sludge",
+      "direction": "output",
+      "amount": {
+        "value": 0.45,
+        "unit_id": "kg",
+        "basis": "absolute",
+        "source_id": "nrcs_awmfh_ch11_2013",
+        "quality_id": "q_storage_awmfh",
+        "origin": "derived",
+        "note": "rest settles to sludge; not lost"
+      }
+    }
+  ],
+  "system_layer": "foreground"
+}
